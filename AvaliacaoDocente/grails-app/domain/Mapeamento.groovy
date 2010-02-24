@@ -1,5 +1,3 @@
-
-
 /**
  * Request Map domain class.
  */

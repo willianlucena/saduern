@@ -1,4 +1,3 @@
-package br.uern.natal
 
 class Disciplina {
 
@@ -7,10 +6,9 @@ class Disciplina {
     String codigo
     String nucleo
     Float pontuacao
-    Curso curso
 
-    static hasMany = [pessoa: Pessoa, resposta:Resposta]
-    static belongsTo = Curso
+    static hasMany = [usuario: Usuario, resposta:Resposta]
+    static belongsTo = [curso: Curso]
 
     String toString(){
         nome

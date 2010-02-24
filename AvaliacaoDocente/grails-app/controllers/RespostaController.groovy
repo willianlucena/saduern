@@ -1,5 +1,3 @@
-package br.uern.natal
-
 class RespostaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]

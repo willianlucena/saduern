@@ -1,5 +1,5 @@
 
-<%@ page import="br.uern.natal.Disciplina" %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -68,7 +68,7 @@
                                     <label for="curso"><g:message code="disciplina.curso.label" default="Curso" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'curso', 'errors')}">
-                                    <g:select name="curso.id" from="${br.uern.natal.Curso.list()}" optionKey="id" value="${disciplinaInstance?.curso?.id}"  />
+                                    <g:select name="curso.id" from="${Curso.list()}" optionKey="id" value="${disciplinaInstance?.curso?.id}"  />
                                 </td>
                             </tr>
                         

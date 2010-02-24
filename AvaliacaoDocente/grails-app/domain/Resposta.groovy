@@ -1,4 +1,3 @@
-package br.uern.natal
 
 class Resposta {
 
@@ -6,6 +5,7 @@ class Resposta {
     Disciplina disciplina
     Questao questao
     Byte conceito
+    Curso curso
     
     static belongsTo = Disciplina
     

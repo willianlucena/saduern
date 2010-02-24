@@ -1,5 +1,5 @@
 
-<%@ page import="br.uern.natal.Resposta" %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -28,6 +28,8 @@
                         
                             <th><g:message code="resposta.disciplina.label" default="Disciplina" /></th>
                    	    
+                            <th><g:message code="resposta.curso.label" default="Curso" /></th>
+                   	    
                             <th><g:message code="resposta.questao.label" default="Questao" /></th>
                    	    
                         </tr>
@@ -41,6 +43,8 @@
                             <td>${fieldValue(bean: respostaInstance, field: "conceito")}</td>
                         
                             <td>${fieldValue(bean: respostaInstance, field: "disciplina")}</td>
+                        
+                            <td>${fieldValue(bean: respostaInstance, field: "curso")}</td>
                         
                             <td>${fieldValue(bean: respostaInstance, field: "questao")}</td>
                         
