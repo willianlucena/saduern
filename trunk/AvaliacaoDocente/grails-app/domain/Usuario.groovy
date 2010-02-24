@@ -20,6 +20,10 @@ class Usuario {
 
     String matricula
 
+    String toString(){
+        userRealName
+    }
+
     static constraints = {
         username(blank: false, unique: true)
         userRealName(blank: false)

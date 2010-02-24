@@ -26,37 +26,36 @@
 				<tbody>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="username">Login Name:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'username','errors')}">
-							<input type="text" id="username" name="username" value="${person.username?.encodeAsHTML()}"/>
-						</td>
-					</tr>
-
-					<tr class="prop">
-						<td valign="top" class="name"><label for="userRealName">Full Name:</label></td>
+						<td valign="top" class="name"><label for="userRealName">Nome Completo:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'userRealName','errors')}">
 							<input type="text" id="userRealName" name="userRealName" value="${person.userRealName?.encodeAsHTML()}"/>
 						</td>
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="passwd">Password:</label></td>
+						<td valign="top" class="name"><label for="username">Login:</label></td>
+						<td valign="top" class="value ${hasErrors(bean:person,field:'username','errors')}">
+							<input type="text" id="username" name="username" value="${person.username?.encodeAsHTML()}"/>
+						</td>
+					</tr>
+
+					<tr class="prop">
+						<td valign="top" class="name"><label for="passwd">Senha:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'passwd','errors')}">
 							<input type="password" id="passwd" name="passwd" value="${person.passwd?.encodeAsHTML()}"/>
 						</td>
 					</tr>
-
-					<tr class="prop">
-						<td valign="top" class="name"><label for="enabled">Enabled:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'enabled','errors')}">
-							<g:checkBox name="enabled" value="${person.enabled}" ></g:checkBox>
+                                        
+                                        <tr class="prop">
+						<td valign="top" class="name"><label for="matricula">Matricula:</label></td>
+						<td valign="top" class="value ${hasErrors(bean:person,field:'matricula','errors')}">
+							<input type="text" id="matricula" name="matricula" value="${person.matricula?.encodeAsHTML()}"/>
 						</td>
 					</tr>
-
 					<tr class="prop">
-						<td valign="top" class="name"><label for="description">Description:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'description','errors')}">
-							<input type="text" id="description" name="description" value="${person.description?.encodeAsHTML()}"/>
+						<td valign="top" class="name"><label for="enabled">Matriculado?</label></td>
+						<td valign="top" class="value ${hasErrors(bean:person,field:'enabled','errors')}">
+							<g:checkBox name="enabled" value="${person.enabled}" ></g:checkBox>
 						</td>
 					</tr>
 
@@ -67,15 +66,8 @@
 						</td>
 					</tr>
 
-					<tr class="prop">
-						<td valign="top" class="name"><label for="emailShow">Show Email:</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'emailShow','errors')}">
-							<g:checkBox name="emailShow" value="${person.emailShow}"/>
-						</td>
-					</tr>
-
-					<tr class="prop">
-						<td valign="top" class="name" align="left">Assign Roles:</td>
+				        <tr class="prop">
+						<td valign="top" class="name" align="left">Permissões:</td>
 					</tr>
 
 					<g:each in="${authorityList}">
