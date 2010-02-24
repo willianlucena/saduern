@@ -26,37 +26,42 @@
 				</tr>
 
 				<tr class="prop">
-					<td valign="top" class="name">Login Name:</td>
+					<td valign="top" class="name">Nome Completo:</td>
+					<td valign="top" class="value">${person.userRealName?.encodeAsHTML()}</td>
+				</tr>
+
+                                <tr class="prop">
+					<td valign="top" class="name">Login:</td>
 					<td valign="top" class="value">${person.username?.encodeAsHTML()}</td>
 				</tr>
 
 				<tr class="prop">
-					<td valign="top" class="name">Full Name:</td>
-					<td valign="top" class="value">${person.userRealName?.encodeAsHTML()}</td>
+					<td valign="top" class="name">Matricula:</td>
+					<td valign="top" class="value">${person.matricula}</td>
 				</tr>
 
-				<tr class="prop">
-					<td valign="top" class="name">Enabled:</td>
+                                <tr class="prop">
+					<td valign="top" class="name">Matriculado?</td>
 					<td valign="top" class="value">${person.enabled}</td>
 				</tr>
 
-				<tr class="prop">
+<!--				<tr class="prop">
 					<td valign="top" class="name">Description:</td>
 					<td valign="top" class="value">${person.description?.encodeAsHTML()}</td>
 				</tr>
-
+-->
 				<tr class="prop">
 					<td valign="top" class="name">Email:</td>
 					<td valign="top" class="value">${person.email?.encodeAsHTML()}</td>
 				</tr>
 
-				<tr class="prop">
+<!--				<tr class="prop">
 					<td valign="top" class="name">Show Email:</td>
 					<td valign="top" class="value">${person.emailShow}</td>
 				</tr>
-
+-->
 				<tr class="prop">
-					<td valign="top" class="name">Roles:</td>
+					<td valign="top" class="name">Permissões:</td>
 					<td valign="top" class="value">
 						<ul>
 						<g:each in="${roleNames}" var='name'>
