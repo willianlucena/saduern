@@ -1,0 +1,100 @@
+package br.uern.natal
+
+class RespostaController {
+
+    static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+
+    def index = {
+        redirect(action: "list", params: params)
+    }
+
+    def list = {
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count()]
+    }
+
+    def create = {
+        def respostaInstance = new Resposta()
+        respostaInstance.properties = params
+        return [respostaInstance: respostaInstance]
+    }
+
+    def save = {
+        def respostaInstance = new Resposta(params)
+        if (respostaInstance.save(flush: true)) {
+            flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
+            redirect(action: "show", id: respostaInstance.id)
+        }
+        else {
+            render(view: "create", model: [respostaInstance: respostaInstance])
+        }
+    }
+
+    def show = {
+        def respostaInstance = Resposta.get(params.id)
+        if (!respostaInstance) {
+            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'resposta.label', default: 'Resposta'), params.id])}"
+            redirect(action: "list")
+        }
+        else {
+            [respostaInstance: respostaInstance]
+        }
+    }
+
+    def edit = {
+        def respostaInstance = Resposta.get(params.id)
+        if (!respostaInstance) {
+            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'resposta.label', default: 'Resposta'), params.id])}"
+            redirect(action: "list")
+        }
+        else {
+            return [respostaInstance: respostaInstance]
+        }
+    }
+
+    def update = {
+        def respostaInstance = Resposta.get(params.id)
+        if (respostaInstance) {
+            if (params.version) {
+                def version = params.version.toLong()
+                if (respostaInstance.version > version) {
+                    
+                    respostaInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'resposta.label', default: 'Resposta')] as Object[], "Another user has updated this Resposta while you were editing")
+                    render(view: "edit", model: [respostaInstance: respostaInstance])
+                    return
+                }
+            }
+            respostaInstance.properties = params
+            if (!respostaInstance.hasErrors() && respostaInstance.save(flush: true)) {
+                flash.message = "${message(code: 'default.updated.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
+                redirect(action: "show", id: respostaInstance.id)
+            }
+            else {
+                render(view: "edit", model: [respostaInstance: respostaInstance])
+            }
+        }
+        else {
+            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'resposta.label', default: 'Resposta'), params.id])}"
+            redirect(action: "list")
+        }
+    }
+
+    def delete = {
+        def respostaInstance = Resposta.get(params.id)
+        if (respostaInstance) {
+            try {
+                respostaInstance.delete(flush: true)
+                flash.message = "${message(code: 'default.deleted.message', args: [message(code: 'resposta.label', default: 'Resposta'), params.id])}"
+                redirect(action: "list")
+            }
+            catch (org.springframework.dao.DataIntegrityViolationException e) {
+                flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'resposta.label', default: 'Resposta'), params.id])}"
+                redirect(action: "show", id: params.id)
+            }
+        }
+        else {
+            flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'resposta.label', default: 'Resposta'), params.id])}"
+            redirect(action: "list")
+        }
+    }
+}
