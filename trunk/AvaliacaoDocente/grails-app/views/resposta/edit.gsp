@@ -1,5 +1,5 @@
 
-<%@ page import="br.uern.natal.Resposta" %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -44,7 +44,16 @@
                                   <label for="disciplina"><g:message code="resposta.disciplina.label" default="Disciplina" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'disciplina', 'errors')}">
-                                    <g:select name="disciplina.id" from="${br.uern.natal.Disciplina.list()}" optionKey="id" value="${respostaInstance?.disciplina?.id}"  />
+                                    <g:select name="disciplina.id" from="${Disciplina.list()}" optionKey="id" value="${respostaInstance?.disciplina?.id}"  />
+                                </td>
+                            </tr>
+                        
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="curso"><g:message code="resposta.curso.label" default="Curso" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'curso', 'errors')}">
+                                    <g:select name="curso.id" from="${Curso.list()}" optionKey="id" value="${respostaInstance?.curso?.id}"  />
                                 </td>
                             </tr>
                         
@@ -53,7 +62,7 @@
                                   <label for="questao"><g:message code="resposta.questao.label" default="Questao" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'questao', 'errors')}">
-                                    <g:select name="questao.id" from="${br.uern.natal.Questao.list()}" optionKey="id" value="${respostaInstance?.questao?.id}"  />
+                                    <g:select name="questao.id" from="${Questao.list()}" optionKey="id" value="${respostaInstance?.questao?.id}"  />
                                 </td>
                             </tr>
                         

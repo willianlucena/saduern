@@ -3,9 +3,9 @@
  */
 class Usuario {
     static transients = ['pass']
-    static hasMany = [authorities: Permissao/*, disciplina:Disciplina*/]
-    static belongsTo = Permissao
-    //, Disciplina
+    static hasMany = [authorities: Permissao, disciplina: Disciplina]
+
+    static belongsTo = [Permissao, Disciplina]
 
     String username
     String userRealName
@@ -25,5 +25,6 @@ class Usuario {
         userRealName(blank: false)
         passwd(blank: false)
         enabled()
+        matricula(nullable:false,blank:false,unique:true)
     }
 }

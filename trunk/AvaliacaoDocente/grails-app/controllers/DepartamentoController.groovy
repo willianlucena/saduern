@@ -1,4 +1,3 @@
-package br.uern.natal
 
 class DepartamentoController {
 

@@ -1,6 +1,3 @@
-
-
-
 /**
  * User controller.
  */
@@ -40,20 +37,20 @@ class UsuarioController {
 	}
 
 	/**
-	 * Person delete action. Before removing an existing person,
-	 * he should be removed from those authorities which he is involved.
+	 * Pessoa: ação de exclusão. Antes de retirar uma pessoa existente,
+         * deve ser retirado as permissões que ele possui.
 	 */
 	def delete = {
 
 		def person = Usuario.get(params.id)
 		if (person) {
 			def authPrincipal = authenticateService.principal()
-			//avoid self-delete if the logged-in user is an admin
+			// evitar a auto-excluir, se o usuário logado é um administrador
 			if (!(authPrincipal instanceof String) && authPrincipal.username == person.username) {
 				flash.message = "You can not delete yourself, please login as another admin and try again"
 			}
 			else {
-				//first, delete this person from People_Authorities table.
+				// primeiro, elimine essa pessoa da tabela 'permissao_people'
 				Permissao.findAll().each { it.removeFromPeople(person) }
 				person.delete()
 				flash.message = "Usuario $params.id deleted."

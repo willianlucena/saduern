@@ -1,5 +1,5 @@
 
-<%@ page import="br.uern.natal.Disciplina" %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -78,12 +78,12 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="disciplina.pessoa.label" default="Pessoa" /></td>
+                            <td valign="top" class="name"><g:message code="disciplina.usuario.label" default="Usuario" /></td>
                             
                             <td valign="top" style="text-align: left;" class="value">
                                 <ul>
-                                <g:each in="${disciplinaInstance.pessoa}" var="p">
-                                    <li><g:link controller="pessoa" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></li>
+                                <g:each in="${disciplinaInstance.usuario}" var="u">
+                                    <li><g:link controller="usuario" action="show" id="${u.id}">${u?.encodeAsHTML()}</g:link></li>
                                 </g:each>
                                 </ul>
                             </td>

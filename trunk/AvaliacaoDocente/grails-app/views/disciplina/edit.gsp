@@ -1,5 +1,5 @@
 
-<%@ page import="br.uern.natal.Disciplina" %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -87,16 +87,16 @@
                                   <label for="curso"><g:message code="disciplina.curso.label" default="Curso" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'curso', 'errors')}">
-                                    <g:select name="curso.id" from="${br.uern.natal.Curso.list()}" optionKey="id" value="${disciplinaInstance?.curso?.id}"  />
+                                    <g:select name="curso.id" from="${Curso.list()}" optionKey="id" value="${disciplinaInstance?.curso?.id}"  />
                                 </td>
                             </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="pessoa"><g:message code="disciplina.pessoa.label" default="Pessoa" /></label>
+                                  <label for="usuario"><g:message code="disciplina.usuario.label" default="Usuario" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'pessoa', 'errors')}">
-                                    <g:select name="pessoa" from="${br.uern.natal.Pessoa.list()}" multiple="yes" optionKey="id" size="5" value="${disciplinaInstance?.pessoa}" />
+                                <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'usuario', 'errors')}">
+                                    <g:select name="usuario" from="${Usuario.list()}" multiple="yes" optionKey="id" size="5" value="${disciplinaInstance?.usuario}" />
                                 </td>
                             </tr>
                         

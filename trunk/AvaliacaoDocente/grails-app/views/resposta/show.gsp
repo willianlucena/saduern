@@ -1,5 +1,5 @@
 
-<%@ page import="br.uern.natal.Resposta" %>
+
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -40,6 +40,13 @@
                             <td valign="top" class="name"><g:message code="resposta.disciplina.label" default="Disciplina" /></td>
                             
                             <td valign="top" class="value"><g:link controller="disciplina" action="show" id="${respostaInstance?.disciplina?.id}">${respostaInstance?.disciplina?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="resposta.curso.label" default="Curso" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="curso" action="show" id="${respostaInstance?.curso?.id}">${respostaInstance?.curso?.encodeAsHTML()}</g:link></td>
                             
                         </tr>
                     

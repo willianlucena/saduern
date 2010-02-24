@@ -1,4 +1,3 @@
-package br.uern.natal
 
 class Pessoa {
     
@@ -8,8 +7,8 @@ class Pessoa {
     String matricula
     String senha
    
-    static hasMany = [disciplina:Disciplina]
-    static belongsTo = Disciplina
+    //static hasMany = [disciplina:Disciplina]
+    //static belongsTo = Disciplina
 
     String toString(){
         nome
