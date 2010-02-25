@@ -30,7 +30,7 @@
                         
                             <g:sortableColumn property="nucleo" title="${message(code: 'disciplina.nucleo.label', default: 'Nucleo')}" />
                         
-                            <g:sortableColumn property="pontuacao" title="${message(code: 'disciplina.pontuacao.label', default: 'Pontuacao')}" />
+                            <!--<g:sortableColumn property="pontuacao" title="${message(code: 'disciplina.pontuacao.label', default: 'Pontuacao')}" />-->
                         
                             <th><g:message code="disciplina.curso.label" default="Curso" /></th>
                    	    
@@ -48,7 +48,7 @@
                         
                             <td>${fieldValue(bean: disciplinaInstance, field: "nucleo")}</td>
                         
-                            <td>${fieldValue(bean: disciplinaInstance, field: "pontuacao")}</td>
+                            <!--<td>${fieldValue(bean: disciplinaInstance, field: "pontuacao")}</td>-->
                         
                             <td>${fieldValue(bean: disciplinaInstance, field: "curso")}</td>
                         

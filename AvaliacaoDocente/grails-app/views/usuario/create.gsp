@@ -77,6 +77,17 @@
 					</tr>
 					</g:each>
 
+                                        <tr class="prop">
+						<td valign="top" class="name" align="left">Disciplinas:</td>
+					</tr>
+
+					<g:each in="${disciplinaList}">
+					<tr>
+						<td valign="top" class="name" align="left">${it.nome.encodeAsHTML()}</td>
+						<td align="left"><g:checkBox name="${it.nome}"/></td>
+					</tr>
+					</g:each>
+
 				</tbody>
 				</table>
 			</div>

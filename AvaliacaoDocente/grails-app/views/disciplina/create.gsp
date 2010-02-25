@@ -54,14 +54,14 @@
                                 </td>
                             </tr>
                         
-                            <tr class="prop">
+                        <!--    <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="pontuacao"><g:message code="disciplina.pontuacao.label" default="Pontuacao" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'pontuacao', 'errors')}">
                                     <g:textField name="pontuacao" value="${fieldValue(bean: disciplinaInstance, field: 'pontuacao')}" />
                                 </td>
-                            </tr>
+                            </tr>-->
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
