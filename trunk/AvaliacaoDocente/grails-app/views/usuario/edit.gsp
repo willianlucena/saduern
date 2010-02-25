@@ -90,6 +90,19 @@
 						</td>
 					</tr>
 
+                                        <tr class="prop">
+						<td valign="top" class="name"><label for="disciplina">Disciplina:</label></td>
+						<td valign="top" class="value ${hasErrors(bean:person,field:'disciplina','errors')}">
+							<ul>
+							<g:each var="entry" in="${disciplinaMap}">
+								<li>${entry.key.nome.encodeAsHTML()}
+									<g:checkBox name="${entry.key.nome}" value="${entry.value}"/>
+								</li>
+							</g:each>
+							</ul>
+						</td>
+					</tr>
+
 				</tbody>
 				</table>
 			</div>

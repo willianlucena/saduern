@@ -13,7 +13,8 @@ class UsuarioController {
 	}
 
 	def list = {
-		if (!params.max) {
+
+                if (!params.max) {
 			params.max = 10
 		}
 		[personList: Usuario.list(params)]
@@ -33,7 +34,15 @@ class UsuarioController {
 		roleNames.sort { n1, n2 ->
 			n1 <=> n2
 		}
-		[person: person, roleNames: roleNames]
+                //listar disciplinas
+		List disciplinas = []
+		for (disc in person.disciplina) {
+			disciplinas << disc.nome
+		}
+		disciplinas.sort { n1, n2 ->
+			n1 <=> n2
+		}
+		[person: person, roleNames: roleNames, disciplinas: disciplinas]
 	}
 
 	/**
@@ -103,6 +112,7 @@ class UsuarioController {
 		if (person.save()) {
 			Permissao.findAll().each { it.removeFromPeople(person) }
 			addRoles(person)
+                        addDisciplinas(person)
 			redirect action: show, id: person.id
 		}
 		else {
@@ -111,7 +121,7 @@ class UsuarioController {
 	}
 
 	def create = {
-		[person: new Usuario(params), authorityList: Permissao.list()]
+		[person: new Usuario(params), authorityList: Permissao.list(), disciplinaList: Disciplina.list()]
 	}
 
 	/**
@@ -124,10 +134,11 @@ class UsuarioController {
 		person.passwd = authenticateService.encodePassword(params.passwd)
 		if (person.save()) {
 			addRoles(person)
+                        addDisciplinas(person)
 			redirect action: show, id: person.id
 		}
 		else {
-			render view: 'create', model: [authorityList: Permissao.list(), person: person]
+			render view: 'create', model: [disciplinaList: Disciplina.list(), authorityList: Permissao.list(), person: person]
 		}
 	}
 
@@ -137,6 +148,20 @@ class UsuarioController {
 				Permissao.findByAuthority(key).addToPeople(person)
 			}
 		}
+	}
+
+        //teste add disciplina
+        private void addDisciplinas(person) {
+
+                for (String key in params.keySet()) {
+                    println key
+			if (!key.contains('ROLE') && 'on' == params.get(key)) {
+                           if(Disciplina.findByNome(key) != null) {
+				Disciplina.findByNome(key).addToUsuario(person)
+                           }
+			}
+		}
+
 	}
 
 	private Map buildPersonModel(person) {
@@ -153,7 +178,20 @@ class UsuarioController {
 		for (role in roles) {
 			roleMap[(role)] = userRoleNames.contains(role.authority)
 		}
+		//listar disciplinas
+                List disciplinas = Disciplina.list()
+		disciplinas.sort { r1, r2 ->
+			r1.nome <=> r2.nome
+		}
+		Set userDisciplinas = []
+		for (disc in person.disciplina) {
+			userDisciplinas << disc.nome
+		}
+		LinkedHashMap<Disciplina, Boolean> disciplinaMap = [:]
+		for (disc in disciplinas) {
+			disciplinaMap[(disc)] = userDisciplinas.contains(disc.nome)
+		}
 
-		return [person: person, roleMap: roleMap]
+		return [person: person, roleMap: roleMap, disciplinaMap: disciplinaMap]
 	}
 }

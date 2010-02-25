@@ -71,6 +71,17 @@
 					</td>
 				</tr>
 
+                                <tr class="prop">
+					<td valign="top" class="name">Disciplinas:</td>
+					<td valign="top" class="value">
+						<ul>
+						<g:each in="${disciplinas}" var='name'>
+							<li>${name}</li>
+						</g:each>
+						</ul>
+					</td>
+				</tr>
+
 			</tbody>
 			</table>
 		</div>

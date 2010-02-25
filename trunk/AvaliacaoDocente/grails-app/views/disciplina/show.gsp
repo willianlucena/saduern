@@ -50,12 +50,12 @@
                             
                         </tr>
                     
-                        <tr class="prop">
+                 <!--       <tr class="prop">
                             <td valign="top" class="name"><g:message code="disciplina.pontuacao.label" default="Pontuacao" /></td>
                             
                             <td valign="top" class="value">${fieldValue(bean: disciplinaInstance, field: "pontuacao")}</td>
                             
-                        </tr>
+                        </tr>-->
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="disciplina.resposta.label" default="Resposta" /></td>
