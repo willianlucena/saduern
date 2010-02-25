@@ -4,7 +4,6 @@
 class Usuario {
     static transients = ['pass']
     static hasMany = [authorities: Permissao, disciplina: Disciplina]
-
     static belongsTo = [Permissao, Disciplina]
 
     String username
