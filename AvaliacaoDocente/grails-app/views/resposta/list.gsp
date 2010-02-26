@@ -18,7 +18,17 @@
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="list">
-                <table>
+            <g:each in="${questaoList}" status="i" var="questao">
+                  ${fieldValue(bean: questao, field: "id")}) ${fieldValue(bean: questao, field: "pergunta")}:<br/>
+                  Conceito 1<g:checkBox name="1" /><br/>
+                  Conceito 2<g:checkBox name="2"/><br/>
+                  Conceito 3<g:checkBox name="3"/><br/>
+                  Conceito 4<g:checkBox name="4"/><br/>
+                  Conceito 5<g:checkBox name="conceito" value="${fieldValue(bean: respostaInstance, field: 'conceito')}"/><br/>
+            </g:each>
+
+
+<!--                <table>
                     <thead>
                         <tr>
                         
@@ -51,7 +61,7 @@
                         </tr>
                     </g:each>
                     </tbody>
-                </table>
+                </table>-->
             </div>
             <div class="paginateButtons">
                 <g:paginate total="${respostaInstanceTotal}" />

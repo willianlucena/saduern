@@ -8,12 +8,15 @@ class RespostaController {
 
     def list = {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count()]
+        def respostaInstance = new Resposta()
+        respostaInstance.properties = params
+        [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count(), questaoList: Questao.list(),respostaInstance: respostaInstance]
     }
 
     def create = {
         def respostaInstance = new Resposta()
         respostaInstance.properties = params
+        print respostaInstance.conceito + '  $$$$$$$$$$$'
         return [respostaInstance: respostaInstance]
     }
 
