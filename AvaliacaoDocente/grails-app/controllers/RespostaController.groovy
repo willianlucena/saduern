@@ -16,12 +16,15 @@ class RespostaController {
     def create = {
         def respostaInstance = new Resposta()
         respostaInstance.properties = params
-        print respostaInstance.conceito + '  $$$$$$$$$$$'
         return [respostaInstance: respostaInstance]
     }
 
     def save = {
         def respostaInstance = new Resposta(params)
+        println 'TESTE    ' + params
+        println 'conceito: ' + respostaInstance.conceito
+        println 'disciplina: ' + respostaInstance.disciplina
+        println 'questao: ' + respostaInstance.questao
         if (respostaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
             redirect(action: "show", id: respostaInstance.id)
