@@ -4,7 +4,7 @@ class Resposta {
     Long id
     Disciplina disciplina
     Questao questao
-    Byte conceito
+    Boolean conceito
     Curso curso
     
     static belongsTo = Disciplina

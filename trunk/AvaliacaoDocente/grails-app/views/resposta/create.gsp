@@ -6,6 +6,7 @@
         <meta name="layout" content="main" />
         <g:set var="entityName" value="${message(code: 'resposta.label', default: 'Resposta')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
+
     </head>
     <body>
         <div class="nav">
@@ -32,7 +33,12 @@
                                     <label for="conceito"><g:message code="resposta.conceito.label" default="Conceito" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'conceito', 'errors')}">
-                                    <g:textField name="conceito" value="${fieldValue(bean: respostaInstance, field: 'conceito')}" />
+                                    <!--<g:textField name="conceito" value="${fieldValue(bean: respostaInstance, field: 'conceito')}" />-->
+                                    <!--Conceito 5<g:checkBox name="5" value="${fieldValue(bean: respostaInstance, field: 'conceito')}"/><br/>-->
+                                    <g:radio name="myGroup" value="${fieldValue(bean: respostaInstance, field: 'conceito')}"/>
+                                    <g:radio name="myGroup" value="2"/>
+                                    <g:radio name="myGroup" value="3"/>
+                                    <g:radio name="myGroup" value="4"/>
                                 </td>
                             </tr>
                         
