@@ -35,10 +35,10 @@
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'conceito', 'errors')}">
                                     <!--<g:textField name="conceito" value="${fieldValue(bean: respostaInstance, field: 'conceito')}" />-->
                                     <!--Conceito 5<g:checkBox name="5" value="${fieldValue(bean: respostaInstance, field: 'conceito')}"/><br/>-->
-                                    <g:radio name="myGroup" value="${fieldValue(bean: respostaInstance, field: 'conceito')}"/>
-                                    <g:radio name="myGroup" value="2"/>
-                                    <g:radio name="myGroup" value="3"/>
-                                    <g:radio name="myGroup" value="4"/>
+                                    <g:radio name="conceito" value="1"/>
+                                    <g:radio name="conceito" value="2"/>
+                                    <g:radio name="conceito" value="3"/>
+                                    <g:radio name="conceito" value="4"/>
                                 </td>
                             </tr>
                         
