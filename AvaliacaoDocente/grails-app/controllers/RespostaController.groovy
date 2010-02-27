@@ -16,7 +16,7 @@ class RespostaController {
     def create = {
         def respostaInstance = new Resposta()
         respostaInstance.properties = params
-        return [respostaInstance: respostaInstance]
+        return [respostaInstance: respostaInstance, questaoList: Questao.list()]
     }
 
     def save = {
