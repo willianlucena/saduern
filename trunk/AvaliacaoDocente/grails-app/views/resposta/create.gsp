@@ -28,19 +28,19 @@
                     <table>
                         <tbody>
                         
-                            <tr class="prop">
+            <!--                <tr class="prop">
                                 <td valign="top" class="name">
                                     <label for="conceito"><g:message code="resposta.conceito.label" default="Conceito" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'conceito', 'errors')}">
-                                    <!--<g:textField name="conceito" value="${fieldValue(bean: respostaInstance, field: 'conceito')}" />-->
-                                    <!--Conceito 5<g:checkBox name="5" value="${fieldValue(bean: respostaInstance, field: 'conceito')}"/><br/>-->
+                                    <g:textField name="conceito" value="${fieldValue(bean: respostaInstance, field: 'conceito')}" />
+                                    Conceito 5<g:checkBox name="5" value="${fieldValue(bean: respostaInstance, field: 'conceito')}"/><br/>
                                     <g:radio name="conceito" value="1"/>
                                     <g:radio name="conceito" value="2"/>
                                     <g:radio name="conceito" value="3"/>
                                     <g:radio name="conceito" value="4"/>
                                 </td>
-                            </tr>
+                            </tr>-->
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -59,18 +59,37 @@
                                     <g:select name="curso.id" from="${Curso.list()}" optionKey="id" value="${respostaInstance?.curso?.id}"  />
                                 </td>
                             </tr>
-                        
+                          </tbody>
+                    </table>
+                            <div class="list">
+                              <table>
+                                <thead>
+                                  <tr class="prop">
+                                <th>Questão</th>
+                                <th>Conceito 1</th>
+                                <th>Conceito 2</th>
+                                <th>Conceito 3</th>
+                                <th>Conceito 4</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                        <g:each in="${questaoList}" status="i" var="questao">
                             <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="questao"><g:message code="resposta.questao.label" default="Questao" /></label>
-                                </td>
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'questao', 'errors')}">
                                     <g:select name="questao.id" from="${Questao.list()}" optionKey="id" value="${respostaInstance?.questao?.id}"  />
+                                  ${fieldValue(bean: questao, field: "id")}) ${fieldValue(bean: questao, field: "pergunta")}:<br/>
                                 </td>
+                                <td align="center"><g:radio name="conceito.id" value="1"/></td>
+                                <td align="center"><g:radio name="conceito.id" value="2"/></td>
+                                <td align="center"><g:radio name="conceito.id" value="3"/></td>
+                                <td align="center"><g:radio name="conceito.id" value="4"/></td>
+                                
                             </tr>
-                        
-                        </tbody>
-                    </table>
+                        </g:each>
+                                </tbody>
+                                </table>
+                              </div>
+
                 </div>
                 <div class="buttons">
                     <span class="button"><g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" /></span>

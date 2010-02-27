@@ -14,19 +14,19 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop','update'
-            url = "jdbc:mysql://localhost/AvaliacaoDocente?createDatabaseIfNotExist=true"
+            url = "jdbc:mysql://localhost/avaliacao_docente?createDatabaseIfNotExist=true"
         }
     }
     test {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://localhost/AvaliacaoDocente?createDatabaseIfNotExist=true"
+            url = "jdbc:mysql://localhost/avaliacao_docente?createDatabaseIfNotExist=true"
         }
     }
     production {
         dataSource {
             dbCreate = "update"
-            url = "jdbc:mysql://localhost/AvaliacaoDocente?createDatabaseIfNotExist=true"
+            url = "jdbc:mysql://localhost/avaliacao_docente?createDatabaseIfNotExist=true"
         }
     }
 }
