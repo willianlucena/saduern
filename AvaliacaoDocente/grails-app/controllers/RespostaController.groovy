@@ -21,10 +21,21 @@ class RespostaController {
 
     def save = {
         def respostaInstance = new Resposta(params)
-        println 'TESTE    ' + params
+        //println 'TESTE    ' + params
         println 'conceito: ' + respostaInstance.conceito
         println 'disciplina: ' + respostaInstance.disciplina
         println 'questao: ' + respostaInstance.questao
+        for (String key in params.keySet()) {
+            if(key.equals('conceito1')){
+//                println 'entrou: ' + params.getAt(key)
+//                Byte b = params.getAt(key)
+//                println 'Byte '+b
+                respostaInstance.conceito = params.getAt(key)
+            }
+        }
+        respostaInstance.conceito -= 48
+        println '%%%%%%%%%%%%%%%%%%   conceito: ' + respostaInstance.conceito
+
         if (respostaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
             redirect(action: "show", id: respostaInstance.id)
@@ -62,7 +73,7 @@ class RespostaController {
             if (params.version) {
                 def version = params.version.toLong()
                 if (respostaInstance.version > version) {
-                    
+
                     respostaInstance.errors.rejectValue("version", "default.optimistic.locking.failure", [message(code: 'resposta.label', default: 'Resposta')] as Object[], "Another user has updated this Resposta while you were editing")
                     render(view: "edit", model: [respostaInstance: respostaInstance])
                     return
