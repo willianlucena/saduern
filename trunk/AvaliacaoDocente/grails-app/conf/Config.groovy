@@ -82,6 +82,4 @@ log4j = {
 }
 
 
-     
-
 //log4j.logger.org.springframework.security='off,stdout'
