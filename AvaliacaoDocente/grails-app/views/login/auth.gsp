@@ -1,6 +1,6 @@
 <head>
 <meta name='layout' content='main' />
-<title>Login</title>
+<title>SADUERN - Sistema de Avaliação Docente - UERN</title>
 <style type='text/css' media='screen'>
 #login {
 	margin:15px 0px; padding:0px;
@@ -48,23 +48,23 @@
 			<g:if test='${flash.message}'>
 			<div class='login_message'>${flash.message}</div>
 			</g:if>
-			<div class='fheader'>Please Login..</div>
+			<div class='fheader'>Tela de Login</div>
 			<form action='${postUrl}' method='POST' id='loginForm' class='cssform'>
 				<p>
-					<label for='j_username'>Login ID</label>
+					<label for='j_username'>Matricula</label>
 					<input type='text' class='text_' name='j_username' id='j_username' value='${request.remoteUser}' />
 				</p>
 				<p>
-					<label for='j_password'>Password</label>
+					<label for='j_password'>Senha</label>
 					<input type='password' class='text_' name='j_password' id='j_password' />
 				</p>
 				<p>
-					<label for='remember_me'>Remember me</label>
+					<label for='remember_me'>Lembre-me</label>
 					<input type='checkbox' class='chk' name='_spring_security_remember_me' id='remember_me'
 					<g:if test='${hasCookie}'>checked='checked'</g:if> />
 				</p>
 				<p>
-					<input type='submit' value='Login' />
+					<input type='submit' value='Entrar' />
 				</p>
 			</form>
 		</div>
