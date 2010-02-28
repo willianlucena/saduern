@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'resposta.label', default: 'Resposta')}" />
+        <g:set var="entityName" value="${message(code: 'avaliacao.label', default: 'Avaliacao')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -23,52 +23,46 @@
                     <tbody>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="resposta.id.label" default="Id" /></td>
+                            <td valign="top" class="name"><g:message code="avaliacao.id.label" default="Id" /></td>
                             
-                            <td valign="top" class="value">${fieldValue(bean: respostaInstance, field: "id")}</td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="resposta.conceito.label" default="Conceito" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: respostaInstance, field: "conceito")}</td>
+                            <td valign="top" class="value">${fieldValue(bean: avaliacaoInstance, field: "id")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="resposta.disciplina.label" default="Disciplina" /></td>
+                            <td valign="top" class="name"><g:message code="avaliacao.pontuacao.label" default="Pontuacao" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="disciplina" action="show" id="${respostaInstance?.disciplina?.id}">${respostaInstance?.disciplina?.encodeAsHTML()}</g:link></td>
-                            
-                        </tr>
-
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="resposta.semestreAvaliacao.label" default="Semestre da Avaliação" /></td>
-
-                            <td valign="top" class="value">${fieldValue(bean: respostaInstance, field: "semestreAvaliacao")}</td>
-
-                        </tr>
-
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="resposta.curso.label" default="Curso" /></td>
-                            
-                            <td valign="top" class="value"><g:link controller="curso" action="show" id="${respostaInstance?.curso?.id}">${respostaInstance?.curso?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value">${fieldValue(bean: avaliacaoInstance, field: "pontuacao")}</td>
                             
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="resposta.questao.label" default="Questao" /></td>
+                            <td valign="top" class="name"><g:message code="avaliacao.dataAvaliacao.label" default="Data Avaliacao" /></td>
                             
-                            <td valign="top" class="value"><g:link controller="questao" action="show" id="${respostaInstance?.questao?.id}">${respostaInstance?.questao?.encodeAsHTML()}</g:link></td>
+                            <td valign="top" class="value"><g:formatDate date="${avaliacaoInstance?.dataAvaliacao}" /></td>
                             
                         </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="avaliacao.semestre.label" default="Semestre" /></td>
+                            
+                            <td valign="top" class="value">${fieldValue(bean: avaliacaoInstance, field: "semestre")}</td>
+                            
+                        </tr>
+                    
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="avaliacao.disciplina.label" default="Disciplina" /></td>
+                            
+                            <td valign="top" class="value"><g:link controller="disciplina" action="show" id="${avaliacaoInstance?.disciplina?.id}">${avaliacaoInstance?.disciplina?.encodeAsHTML()}</g:link></td>
+                            
+                        </tr>
+                    
                     </tbody>
                 </table>
             </div>
             <div class="buttons">
                 <g:form>
-                    <g:hiddenField name="id" value="${respostaInstance?.id}" />
+                    <g:hiddenField name="id" value="${avaliacaoInstance?.id}" />
                     <span class="button"><g:actionSubmit class="edit" action="edit" value="${message(code: 'default.button.edit.label', default: 'Edit')}" /></span>
                     <span class="button"><g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" /></span>
                 </g:form>

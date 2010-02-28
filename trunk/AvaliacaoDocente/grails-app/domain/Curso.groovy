@@ -3,10 +3,10 @@ class Curso {
 
     Long id
     String nome
-    Departamento departamento
+    //Departamento departamento
 
-    static hasMany = [disciplina : Disciplina]
-    static belongsTo = Departamento
+    //static hasMany = [disciplina : Disciplina]
+    //static belongsTo = Departamento
 
     String toString(){
         nome

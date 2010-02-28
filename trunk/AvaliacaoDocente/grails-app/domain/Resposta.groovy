@@ -6,7 +6,8 @@ class Resposta {
     Questao questao
     Integer conceito
     Curso curso
-    
+    String semestreAvaliacao
+
     static belongsTo = Disciplina
     
     static constraints = {

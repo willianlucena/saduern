@@ -5,19 +5,21 @@ class Disciplina {
     String nome
     String codigo
     String nucleo
-    Float pontuacao
+    String semestre
+    String situacao
 
-    static hasMany = [usuario: Usuario, resposta:Resposta]
-    static belongsTo = [curso: Curso]
+    static hasMany = [usuario: Usuario, resposta: Resposta]
+    static belongsTo = [departamento: Departamento]
 
     String toString(){
         nome
     }
 
     static constraints = {
-        nome (nullable:true,blank:true)
-        codigo (nullable:true,blank:true)
-        nucleo (nullable:true,blank:true)
-        pontuacao (nullable:true,blank:true)
+        nome (nullable:true, blank:true)
+        codigo (nullable:true, blank:true)
+        nucleo (nullable:true, blank:true)
+        semestre (nullable:false, blank:false)
+        situacao (nullable:false, blank:false)
     }
 }

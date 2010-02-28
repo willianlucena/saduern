@@ -35,27 +35,7 @@
                             <td valign="top" class="value">${fieldValue(bean: cursoInstance, field: "nome")}</td>
                             
                         </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="curso.disciplina.label" default="Disciplina" /></td>
-                            
-                            <td valign="top" style="text-align: left;" class="value">
-                                <ul>
-                                <g:each in="${cursoInstance.disciplina}" var="d">
-                                    <li><g:link controller="disciplina" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="curso.departamento.label" default="Departamento" /></td>
-                            
-                            <td valign="top" class="value"><g:link controller="departamento" action="show" id="${cursoInstance?.departamento?.id}">${cursoInstance?.departamento?.encodeAsHTML()}</g:link></td>
-                            
-                        </tr>
-                    
+                     
                     </tbody>
                 </table>
             </div>

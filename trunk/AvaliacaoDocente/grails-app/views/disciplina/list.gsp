@@ -23,35 +23,32 @@
                         <tr>
                         
                             <g:sortableColumn property="id" title="${message(code: 'disciplina.id.label', default: 'Id')}" />
-                        
                             <g:sortableColumn property="nome" title="${message(code: 'disciplina.nome.label', default: 'Nome')}" />
-                        
                             <g:sortableColumn property="codigo" title="${message(code: 'disciplina.codigo.label', default: 'Codigo')}" />
-                        
                             <g:sortableColumn property="nucleo" title="${message(code: 'disciplina.nucleo.label', default: 'Nucleo')}" />
-                        
-                            <!--<g:sortableColumn property="pontuacao" title="${message(code: 'disciplina.pontuacao.label', default: 'Pontuacao')}" />-->
-                        
-                            <th><g:message code="disciplina.curso.label" default="Curso" /></th>
-                   	    
+                            <g:sortableColumn property="nucleo" title="${message(code: 'disciplina.departamento.label', default: 'Departamento')}" />
+                            <g:sortableColumn property="nucleo" title="${message(code: 'disciplina.semestre.label', default: 'Semestre')}" />
+                            <g:sortableColumn property="nucleo" title="${message(code: 'disciplina.situacao.label', default: 'Situação')}" />
+                            <th>&nbsp;</th>
                         </tr>
                     </thead>
                     <tbody>
                     <g:each in="${disciplinaInstanceList}" status="i" var="disciplinaInstance">
                         <tr class="${(i % 2) == 0 ? 'odd' : 'even'}">
-                        
-                            <td><g:link action="show" id="${disciplinaInstance.id}">${fieldValue(bean: disciplinaInstance, field: "id")}</g:link></td>
-                        
+
+                            <td>${fieldValue(bean: disciplinaInstance, field: "id")}</td>
                             <td>${fieldValue(bean: disciplinaInstance, field: "nome")}</td>
-                        
                             <td>${fieldValue(bean: disciplinaInstance, field: "codigo")}</td>
-                        
                             <td>${fieldValue(bean: disciplinaInstance, field: "nucleo")}</td>
-                        
-                            <!--<td>${fieldValue(bean: disciplinaInstance, field: "pontuacao")}</td>-->
-                        
-                            <td>${fieldValue(bean: disciplinaInstance, field: "curso")}</td>
-                        
+                            <td>${fieldValue(bean: disciplinaInstance, field: "departamento")}</td>
+                            <td>${fieldValue(bean: disciplinaInstance, field: "semestre")}</td>
+                            <td>${fieldValue(bean: disciplinaInstance, field: "situacao")}</td>
+                            
+                            <td class="actionButtons">
+                                <span class="actionButton">
+                                    <g:link action="show" id="${disciplinaInstance.id}">Show</g:link>
+				</span>
+                            </td>
                         </tr>
                     </g:each>
                     </tbody>

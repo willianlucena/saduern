@@ -39,31 +39,6 @@
                                 </td>
                             </tr>
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="disciplina"><g:message code="curso.disciplina.label" default="Disciplina" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cursoInstance, field: 'disciplina', 'errors')}">
-                                    
-<ul>
-<g:each in="${cursoInstance?.disciplina?}" var="d">
-    <li><g:link controller="disciplina" action="show" id="${d.id}">${d?.encodeAsHTML()}</g:link></li>
-</g:each>
-</ul>
-<g:link controller="disciplina" action="create" params="['curso.id': cursoInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'disciplina.label', default: 'Disciplina')])}</g:link>
-
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="departamento"><g:message code="curso.departamento.label" default="Departamento" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: cursoInstance, field: 'departamento', 'errors')}">
-                                    <g:select name="departamento.id" from="${Departamento.list()}" optionKey="id" value="${cursoInstance?.departamento?.id}"  />
-                                </td>
-                            </tr>
-                        
                         </tbody>
                     </table>
                 </div>

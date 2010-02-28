@@ -46,6 +46,14 @@
                                     <g:radio name="conceito" value="4"/>
                                 </td>-->
                             </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="semestreAvaliacao"><g:message code="resposta.disciplina.label" default="Semestre da Avaliação" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'semestreAvaliacao', 'errors')}">
+                                    <g:textField name="semestreAvaliacao" value="${respostaInstance?.semestreAvaliacao}" />
+                                </td>
+                            </tr>
 
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -83,10 +91,10 @@
                                 <td class="value ${hasErrors(bean: respostaInstance, field: 'questao', 'errors')}">
                                     <!--<g:select name="questao.id" from="${Questao.list()}" optionKey="id" value="${respostaInstance?.questao?.id}"  />-->
                                     ${fieldValue(bean: questao, field: "id")}) ${fieldValue(bean: questao, field: "pergunta")}:<br/>
-                                   <g:radio name="conceito${i+1}" value="1"/>
-                                   <g:radio name="conceito${i+1}" value="2"/>
-                                   <g:radio name="conceito${i+1}" value="3"/>
-                                   <g:radio name="conceito${i+1}" value="4"/>
+                                   <g:radio name="pergunta${i+1}" value="1" checked="true"/>
+                                   <g:radio name="pergunta${i+1}" value="2"/>
+                                   <g:radio name="pergunta${i+1}" value="3"/>
+                                   <g:radio name="pergunta${i+1}" value="4"/>
 
                                 </td>
                             </tr>

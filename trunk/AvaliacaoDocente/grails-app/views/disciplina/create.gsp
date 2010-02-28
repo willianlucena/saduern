@@ -53,22 +53,31 @@
                                     <g:textField name="nucleo" value="${disciplinaInstance?.nucleo}" />
                                 </td>
                             </tr>
-                        
-                        <!--    <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="pontuacao"><g:message code="disciplina.pontuacao.label" default="Pontuacao" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'pontuacao', 'errors')}">
-                                    <g:textField name="pontuacao" value="${fieldValue(bean: disciplinaInstance, field: 'pontuacao')}" />
-                                </td>
-                            </tr>-->
-                        
+
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="curso"><g:message code="disciplina.curso.label" default="Curso" /></label>
+                                  <label for="semestre"><g:message code="disciplina.semestre.label" default="Semestre" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'curso', 'errors')}">
-                                    <g:select name="curso.id" from="${Curso.list()}" optionKey="id" value="${disciplinaInstance?.curso?.id}"  />
+                                <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'semestre', 'errors')}">
+                                    <g:textField name="semestre" value="${disciplinaInstance?.semestre}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                  <label for="situacao"><g:message code="disciplina.situacao.label" default="Situação" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'situacao', 'errors')}">
+                                    <g:textField name="situacao" value="${disciplinaInstance?.situacao}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="departamento"><g:message code="disciplina.departamento.label" default="Departamento" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'departamento', 'errors')}">
+                                    <g:select name="departamento.id" from="${Departamento.list()}" optionKey="id" value="${disciplinaInstance?.departamento?.id}"  />
                                 </td>
                             </tr>
                         
