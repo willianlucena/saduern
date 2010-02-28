@@ -47,9 +47,7 @@
 						</td>
 					</tr>
 
-				
-
-					<tr class="prop">
+                                        <tr class="prop">
 						<td valign="top" class="name"><label for="passwd">Senha:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'passwd','errors')}">
 							<input type="password" id="passwd" name="passwd" value="${person.passwd?.encodeAsHTML()}"/>
@@ -70,7 +68,16 @@
 						</td>
 					</tr>
 
-					<tr class="prop">
+                                        <tr class="prop">
+                                            <td valign="top" class="name">
+                                              <label for="semestreIngresso"><g:message code="usuario.semestreIngresso.label" default="Semestre Ingresso" /></label>
+                                            </td>
+                                            <td valign="top" class="value ${hasErrors(bean: usuarioInstance, field: 'semestreIngresso', 'errors')}">
+                                                <g:textField name="semestreIngresso" value="${usuarioInstance?.semestreIngresso}" />
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr class="prop">
 						<td valign="top" class="name"><label for="email">Email:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'email','errors')}">
 							<input type="text" id="email" name="email" value="${person?.email?.encodeAsHTML()}"/>
@@ -102,6 +109,15 @@
 							</ul>
 						</td>
 					</tr>
+
+                                        <tr class="prop">
+                                            <td valign="top" class="name">
+                                              <label for="curso"><g:message code="usuario.curso.label" default="Curso" /></label>
+                                            </td>
+                                            <td valign="top" class="value ${hasErrors(bean: usuarioInstance, field: 'curso', 'errors')}">
+                                                <g:select name="curso.id" from="${Curso.list()}" optionKey="id" value="${usuarioInstance?.curso?.id}"  />
+                                            </td>
+                                        </tr>
 
 				</tbody>
 				</table>

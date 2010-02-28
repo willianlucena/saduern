@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'resposta.label', default: 'Resposta')}" />
+        <g:set var="entityName" value="${message(code: 'avaliacao.label', default: 'Avaliacao')}" />
         <title><g:message code="default.edit.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -18,60 +18,51 @@
             <g:if test="${flash.message}">
             <div class="message">${flash.message}</div>
             </g:if>
-            <g:hasErrors bean="${respostaInstance}">
+            <g:hasErrors bean="${avaliacaoInstance}">
             <div class="errors">
-                <g:renderErrors bean="${respostaInstance}" as="list" />
+                <g:renderErrors bean="${avaliacaoInstance}" as="list" />
             </div>
             </g:hasErrors>
             <g:form method="post" >
-                <g:hiddenField name="id" value="${respostaInstance?.id}" />
-                <g:hiddenField name="version" value="${respostaInstance?.version}" />
+                <g:hiddenField name="id" value="${avaliacaoInstance?.id}" />
+                <g:hiddenField name="version" value="${avaliacaoInstance?.version}" />
                 <div class="dialog">
                     <table>
                         <tbody>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="conceito"><g:message code="resposta.conceito.label" default="Conceito" /></label>
+                                  <label for="pontuacao"><g:message code="avaliacao.pontuacao.label" default="Pontuacao" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'conceito', 'errors')}">
-                                    <g:textField name="conceito" value="${fieldValue(bean: respostaInstance, field: 'conceito')}" />
-                                </td>
-                            </tr>
-                        
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="disciplina"><g:message code="resposta.disciplina.label" default="Disciplina" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'disciplina', 'errors')}">
-                                    <g:select name="disciplina.id" from="${Disciplina.list()}" optionKey="id" value="${respostaInstance?.disciplina?.id}"  />
+                                <td valign="top" class="value ${hasErrors(bean: avaliacaoInstance, field: 'pontuacao', 'errors')}">
+                                    <g:textField name="pontuacao" value="${fieldValue(bean: avaliacaoInstance, field: 'pontuacao')}" />
                                 </td>
                             </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="curso"><g:message code="resposta.curso.label" default="Curso" /></label>
+                                  <label for="dataAvaliacao"><g:message code="avaliacao.dataAvaliacao.label" default="Data Avaliacao" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'curso', 'errors')}">
-                                    <g:select name="curso.id" from="${Curso.list()}" optionKey="id" value="${respostaInstance?.curso?.id}"  />
+                                <td valign="top" class="value ${hasErrors(bean: avaliacaoInstance, field: 'dataAvaliacao', 'errors')}">
+                                    <g:datePicker name="dataAvaliacao" precision="day" value="${avaliacaoInstance?.dataAvaliacao}"  />
                                 </td>
                             </tr>
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                  <label for="questao"><g:message code="resposta.questao.label" default="Questao" /></label>
+                                  <label for="semestre"><g:message code="avaliacao.semestre.label" default="Semestre" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'questao', 'errors')}">
-                                    <g:select name="questao.id" from="${Questao.list()}" optionKey="id" value="${respostaInstance?.questao?.id}"  />
+                                <td valign="top" class="value ${hasErrors(bean: avaliacaoInstance, field: 'semestre', 'errors')}">
+                                    <g:textField name="semestre" value="${avaliacaoInstance?.semestre}" />
                                 </td>
                             </tr>
-
+                        
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="semestreAvaliacao"><g:message code="resposta.disciplina.label" default="Semestre da Avaliação" /></label>
+                                  <label for="disciplina"><g:message code="avaliacao.disciplina.label" default="Disciplina" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'semestreAvaliacao', 'errors')}">
-                                    <g:textField name="semestreAvaliacao" value="${respostaInstance?.semestreAvaliacao}" />
+                                <td valign="top" class="value ${hasErrors(bean: avaliacaoInstance, field: 'disciplina', 'errors')}">
+                                    <g:select name="disciplina.id" from="${Disciplina.list()}" optionKey="id" value="${avaliacaoInstance?.disciplina?.id}"  />
                                 </td>
                             </tr>
                         

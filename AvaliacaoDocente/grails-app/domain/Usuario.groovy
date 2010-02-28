@@ -1,10 +1,8 @@
-/**
- * User domain class.
- */
+
 class Usuario {
     static transients = ['pass']
     static hasMany = [authorities: Permissao, disciplina: Disciplina]
-    static belongsTo = [Permissao, Disciplina]
+    static belongsTo = [Permissao, Disciplina, Curso]
 
     String username
     String userRealName
@@ -12,12 +10,12 @@ class Usuario {
     String passwd
     boolean enabled
     String email
-    boolean emailShow
-    String description = ''
     /** plain password to create a MD5 password */
     String pass = '[secret]'
 
     String matricula
+    Curso curso
+    String semestreIngresso
 
     String toString(){
         userRealName
@@ -28,6 +26,7 @@ class Usuario {
         userRealName(blank: false)
         passwd(blank: false)
         enabled()
-        matricula(nullable:false,blank:false,unique:true)
+        matricula(nullable: false, blank: false ,unique: true)
+        semestreIngresso (nullable: false, blank: false)
     }
 }

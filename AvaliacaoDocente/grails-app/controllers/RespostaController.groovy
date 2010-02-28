@@ -20,29 +20,40 @@ class RespostaController {
     }
 
     def save = {
+        println 'Params    ' + params
+        int i = 0
+        String pergunta
+        //        for (String key in params.keySet()) {
+        //            i ++
         def respostaInstance = new Resposta(params)
-        //println 'TESTE    ' + params
-        println 'conceito: ' + respostaInstance.conceito
-        println 'disciplina: ' + respostaInstance.disciplina
+        //println 'conceito: ' + respostaInstance.conceito
         println 'questao: ' + respostaInstance.questao
+        println 'disciplina: ' + respostaInstance.disciplina
         for (String key in params.keySet()) {
-            if(key.equals('conceito1')){
-//                println 'entrou: ' + params.getAt(key)
-//                Byte b = params.getAt(key)
-//                println 'Byte '+b
-                respostaInstance.conceito = params.getAt(key)
+            i ++
+            pergunta = 'pergunta' + i
+            String value = params.get(key)
+            if(key.equals(pergunta)){
+//                println pergunta
+                //println 'teste conceito :  :: : : : : : : :        ' + params.get(key)
+                respostaInstance.conceito = Integer.parseInt(value)
+                println '$$$ conceito: ' + respostaInstance.conceito
+//                respostaInstance.conceito -= 48
             }
         }
-        respostaInstance.conceito -= 48
-        println '%%%%%%%%%%%%%%%%%%   conceito: ' + respostaInstance.conceito
-
+        println 'conceito: ' + respostaInstance.conceito
+        // Resposta.save(respostaInstance)
+        //            respostaInstance.save(flush: true)
         if (respostaInstance.save(flush: true)) {
             flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
-            redirect(action: "show", id: respostaInstance.id)
+            redirect (action: "show", id: respostaInstance.id)
         }
         else {
             render(view: "create", model: [respostaInstance: respostaInstance])
         }
+        //        }
+        //        flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
+        //        redirect(action: "show", id: respostaInstance.id)
     }
 
     def show = {

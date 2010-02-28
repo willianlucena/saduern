@@ -49,13 +49,27 @@
                             <td valign="top" class="value">${fieldValue(bean: disciplinaInstance, field: "nucleo")}</td>
                             
                         </tr>
-                    
-                 <!--       <tr class="prop">
-                            <td valign="top" class="name"><g:message code="disciplina.pontuacao.label" default="Pontuacao" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: disciplinaInstance, field: "pontuacao")}</td>
-                            
-                        </tr>-->
+
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="disciplina.semestre.label" default="Semestre" /></td>
+
+                            <td valign="top" class="value">${fieldValue(bean: disciplinaInstance, field: "semestre")}</td>
+
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="disciplina.situacao.label" default="Situação" /></td>
+
+                            <td valign="top" class="value">${fieldValue(bean: disciplinaInstance, field: "situacao")}</td>
+
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="disciplina.departamento.label" default="Departamento" /></td>
+
+                            <td valign="top" class="value">${fieldValue(bean: disciplinaInstance, field: "departamento")}</td>
+
+                        </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="disciplina.resposta.label" default="Resposta" /></td>
@@ -67,13 +81,6 @@
                                 </g:each>
                                 </ul>
                             </td>
-                            
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name"><g:message code="disciplina.curso.label" default="Curso" /></td>
-                            
-                            <td valign="top" class="value"><g:link controller="curso" action="show" id="${disciplinaInstance?.curso?.id}">${disciplinaInstance?.curso?.encodeAsHTML()}</g:link></td>
                             
                         </tr>
                     

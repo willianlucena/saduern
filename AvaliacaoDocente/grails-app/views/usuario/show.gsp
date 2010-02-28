@@ -45,21 +45,18 @@
 					<td valign="top" class="value">${person.enabled}</td>
 				</tr>
 
-<!--				<tr class="prop">
-					<td valign="top" class="name">Description:</td>
-					<td valign="top" class="value">${person.description?.encodeAsHTML()}</td>
-				</tr>
--->
-				<tr class="prop">
+                                <tr class="prop">
+                                    <td valign="top" class="name">Semestre de Ingresso</td>
+
+                                    <td valign="top" class="value">${person.semestreIngresso}</td>
+
+                                </tr>
+
+                                <tr class="prop">
 					<td valign="top" class="name">Email:</td>
 					<td valign="top" class="value">${person.email?.encodeAsHTML()}</td>
 				</tr>
 
-<!--				<tr class="prop">
-					<td valign="top" class="name">Show Email:</td>
-					<td valign="top" class="value">${person.emailShow}</td>
-				</tr>
--->
 				<tr class="prop">
 					<td valign="top" class="name">Permissões:</td>
 					<td valign="top" class="value">
