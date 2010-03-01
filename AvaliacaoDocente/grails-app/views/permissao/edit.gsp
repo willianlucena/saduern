@@ -1,18 +1,18 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Edit Permissao</title>
+	<title>Editar Permissões</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="list" action="list">Permissao List</g:link></span>
-		<span class="menuButton"><g:link class="create" action="create">New Permissao</g:link></span>
+		<span class="menuButton"><g:link class="list" action="list">Listar Permissões</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">Nova Permissão</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>Edit Permissao</h1>
+		<h1>Editar Permissão</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -32,21 +32,21 @@
 			<table>
 			<tbody>
 				<tr class="prop">
-					<td valign="top" class="name"><label for="authority">Permissao Name:</label></td>
+					<td valign="top" class="name"><label for="authority">Nome Permissão:</label></td>
 					<td valign="top" class="value ${hasErrors(bean:authority,field:'authority','errors')}">
 						<input type="text" id="authority" name="authority" value="${authority.authority?.encodeAsHTML()}"/>
 					</td>
 				</tr>
 
 				<tr class="prop">
-					<td valign="top" class="name"><label for="description">Description:</label></td>
+					<td valign="top" class="name"><label for="description">Descrição:</label></td>
 					<td valign="top" class="value ${hasErrors(bean:authority,field:'description','errors')}">
 						<input type="text" id="description" name="description" value="${authority.description?.encodeAsHTML()}"/>
 					</td>
 				</tr>
 
 				<tr class="prop">
-					<td valign="top" class="name"><label for="people">People:</label></td>
+					<td valign="top" class="name"><label for="people">Pessoas:</label></td>
 					<td valign="top" class="value ${hasErrors(bean:authority,field:'people','errors')}">
 						<ul>
 						<g:each var="p" in="${authority.people?}">
@@ -61,7 +61,7 @@
 
 			<div class="buttons">
 				<span class="button"><g:actionSubmit class="save" value="Update" /></span>
-				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Deseja Realmente Excluir está Permissão?');" value="Delete" /></span>
 			</div>
 
 		</g:form>

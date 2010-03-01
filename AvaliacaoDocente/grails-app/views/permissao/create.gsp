@@ -1,18 +1,18 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Create Permissao</title>
+	<title>Administrar Permissões</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="list" action="list">Permissao List</g:link></span>
+		<span class="menuButton"><g:link class="list" action="list">Lista de Permissões</g:link></span>
 	</div>
 
 	<div class="body">
 
-		<h1>Create Permissao</h1>
+		<h1>Criar Permissão</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -27,14 +27,14 @@
 		<table>
 		<tbody>
 			<tr class="prop">
-				<td valign="top" class="name"><label for="authority">Permissao Name:</label></td>
+				<td valign="top" class="name"><label for="authority">Nome da Permissão:</label></td>
 				<td valign="top" class="value ${hasErrors(bean:authority,field:'authority','errors')}">
 					<input type="text" id="authority" name="authority" value="${authority?.authority?.encodeAsHTML()}"/>
 				</td>
 			</tr>
 
 			<tr class="prop">
-				<td valign="top" class="name"><label for="description">Description:</label></td>
+				<td valign="top" class="name"><label for="description">Descrição:</label></td>
 				<td valign="top" class="value ${hasErrors(bean:authority,field:'description','errors')}">
 					<input type="text" id="description" name="description" value="${authority?.description?.encodeAsHTML()}"/>
 				</td>

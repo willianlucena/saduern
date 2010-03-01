@@ -1,17 +1,17 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Mapeamento List</title>
+	<title>Lista de Mapeamento</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="create" action="create">New Mapeamento</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">Novo Mapeamento</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>Mapeamento List</h1>
+		<h1>Lista de Mapeamento</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -20,8 +20,8 @@
 			<thead>
 				<tr>
 					<g:sortableColumn property="id" title="ID" />
-					<g:sortableColumn property="url" title="URL Pattern" />
-					<g:sortableColumn property="configAttribute" title="Roles" />
+					<g:sortableColumn property="url" title="URL Padrão" />
+					<g:sortableColumn property="configAttribute" title="Funções" />
 					<th>&nbsp;</th>
 				</tr>
 			</thead>
@@ -33,7 +33,7 @@
 					<td>${requestmap.configAttribute}</td>
 					<td class="actionButtons">
 						<span class="actionButton">
-						<g:link action="show" id="${requestmap.id}">Show</g:link>
+						<g:link action="show" id="${requestmap.id}">Detalhes</g:link>
 						</span>
 					</td>
 				</tr>

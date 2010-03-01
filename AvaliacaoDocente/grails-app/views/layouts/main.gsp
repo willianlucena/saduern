@@ -10,7 +10,7 @@
         <div id="spinner" class="spinner" style="display:none;">
             <img src="${resource(dir:'images',file:'spinner.gif')}" alt="Spinner" />
         </div>
-        <div id="uernLogo" class="logo"><a href="http://uern.br/"><img src="${resource(dir:'images',file:'uern_logo.png')}" alt="Grails" border="0" /></a></div>
+      <div id="uernLogo" class="logo"><a href="http://uern.br/"><div align="center"><img src="${resource(dir:'images',file:'uern_logo.png')}" alt="UERN" border="0" /></div></a></div>
         <g:layoutBody />
     </body>
 </html>

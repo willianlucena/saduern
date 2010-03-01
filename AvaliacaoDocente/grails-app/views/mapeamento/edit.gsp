@@ -1,18 +1,18 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Edit Mapeamento</title>
+	<title>Editar Mapeamento</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="list" action="list">Mapeamento List</g:link></span>
-		<span class="menuButton"><g:link class="create" action="create">New Mapeamento</g:link></span>
+		<span class="menuButton"><g:link class="list" action="list">Lista de Mapeamento</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">Novo Mapeamento</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>Edit Mapeamento</h1>
+		<h1>Editar Mapeamento</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -35,14 +35,14 @@
 				<tbody>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="url">URL Pattern:</label></td>
+						<td valign="top" class="name"><label for="url">URL Padrão:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:requestmap,field:'url','errors')}">
 							<input type="text" id="url" name="url" value="${requestmap.url?.encodeAsHTML()}"/>
 						</td>
 					</tr>
 
 					<tr class="prop">
-						<td valign="top" class="name"><label for="configAttribute">Roles (comma-delimited):</label></td>
+						<td valign="top" class="name"><label for="configAttribute">Funções<!-- (comma-delimited)-->:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:requestmap,field:'configAttribute','errors')}">
 							<input type="text" name='configAttribute'  value="${requestmap.configAttribute}"/>
 						</td>
@@ -54,7 +54,7 @@
 
 			<div class="buttons">
 				<span class="button"><g:actionSubmit class="save" value="Update" /></span>
-				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Deseja Realmente Excluir este Mapeamento?');" value="Delete" /></span>
 			</div>
 
 		</g:form>
