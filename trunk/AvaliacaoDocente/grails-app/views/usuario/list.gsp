@@ -1,6 +1,6 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Usuario List</title>
+	<title>Todos Usuários</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
 					
 					<td class="actionButtons">
 						<span class="actionButton">
-							<g:link action="show" id="${person.id}">Show</g:link>
+							<g:link action="show" id="${person.id}">Detalhes</g:link>
 						</span>
 					</td>
 				</tr>

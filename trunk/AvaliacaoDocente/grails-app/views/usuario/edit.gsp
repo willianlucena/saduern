@@ -1,14 +1,14 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Edit Usuario</title>
+	<title>Editar Usuários</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="list" action="list">Usuario List</g:link></span>
-		<span class="menuButton"><g:link class="create" action="create">New Usuario</g:link></span>
+		<span class="menuButton"><g:link class="list" action="list">Todoso Usuários</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">Criar Novo Usuário</g:link></span>
 	</div>
 
 	<div class="body">

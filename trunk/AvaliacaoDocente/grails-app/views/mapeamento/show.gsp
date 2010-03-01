@@ -1,14 +1,14 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Show Mapeamento</title>
+	<title>Detalhes do Mapeamento</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="list" action="list">Mapeamento List</g:link></span>
-		<span class="menuButton"><g:link class="create" action="create">New Mapeamento</g:link></span>
+		<span class="menuButton"><g:link class="list" action="list">Lista Mapeamento</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">Nova Mapeamento</g:link></span>
 	</div>
 
 	<div class="body">
@@ -31,7 +31,7 @@
 				</tr>
 
 				<tr class="prop">
-					<td valign="top" class="name">Roles:</td>
+					<td valign="top" class="name">Funções:</td>
 					<td valign="top" class="value">${requestmap.configAttribute}</td>
 				</tr>
 
@@ -43,7 +43,7 @@
 			<g:form>
 				<input type="hidden" name="id" value="${requestmap.id}" />
 				<span class="button"><g:actionSubmit class="edit" value="Edit" /></span>
-				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Deseja Realmente Excluir este Mapeamento?');" value="Delete" /></span>
 			</g:form>
 		</div>
 

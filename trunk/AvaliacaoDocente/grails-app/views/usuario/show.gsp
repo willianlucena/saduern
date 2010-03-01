@@ -1,14 +1,14 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Show Usuario</title>
+	<title>Administração de Usuários</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="list" action="list">Usuario List</g:link></span>
-		<span class="menuButton"><g:link class="create" action="create">New Usuario</g:link></span>
+		<span class="menuButton"><g:link class="list" action="list">Mostrar Todos Usuários</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">Criar Novo Usuário</g:link></span>
 	</div>
 
 	<div class="body">
@@ -87,7 +87,7 @@
 			<g:form>
 				<input type="hidden" name="id" value="${person.id}" />
 				<span class="button"><g:actionSubmit class="edit" value="Edit" /></span>
-				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
+				<span class="button"><g:actionSubmit class="delete" onclick="return confirm('Deseja Realmente Excluir esse Usuário?');" value="Delete" /></span>
 			</g:form>
 		</div>
 

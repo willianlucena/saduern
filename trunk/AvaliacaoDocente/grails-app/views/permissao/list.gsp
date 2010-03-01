@@ -1,17 +1,17 @@
 <head>
 	<meta name="layout" content="main" />
-	<title>Permissao List</title>
+	<title>Lista de Permissão</title>
 </head>
 
 <body>
 
 	<div class="nav">
 		<span class="menuButton"><a class="home" href="${createLinkTo(dir:'')}">Home</a></span>
-		<span class="menuButton"><g:link class="create" action="create">New Permissao</g:link></span>
+		<span class="menuButton"><g:link class="create" action="create">Nova Permissão</g:link></span>
 	</div>
 
 	<div class="body">
-		<h1>Permissao List</h1>
+		<h1>Lista de Permissões</h1>
 		<g:if test="${flash.message}">
 		<div class="message">${flash.message}</div>
 		</g:if>
@@ -33,7 +33,7 @@
 					<td>${authority.description?.encodeAsHTML()}</td>
 					<td class="actionButtons">
 						<span class="actionButton">
-							<g:link action="show" id="${authority.id}">Show</g:link>
+							<g:link action="show" id="${authority.id}">Detalhes</g:link>
 						</span>
 					</td>
 				</tr>
