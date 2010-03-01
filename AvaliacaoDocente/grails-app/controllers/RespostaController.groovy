@@ -20,40 +20,33 @@ class RespostaController {
     }
 
     def save = {
-        println 'Params    ' + params
         int i = 0
-        String pergunta
-        //        for (String key in params.keySet()) {
-        //            i ++
         def respostaInstance = new Resposta(params)
-        //println 'conceito: ' + respostaInstance.conceito
-        println 'questao: ' + respostaInstance.questao
-        println 'disciplina: ' + respostaInstance.disciplina
         for (String key in params.keySet()) {
             i ++
-            pergunta = 'pergunta' + i
-            String value = params.get(key)
-            if(key.equals(pergunta)){
-//                println pergunta
-                //println 'teste conceito :  :: : : : : : : :        ' + params.get(key)
-                respostaInstance.conceito = Integer.parseInt(value)
-                println '$$$ conceito: ' + respostaInstance.conceito
-//                respostaInstance.conceito -= 48
+            if(i > 14){
+                break
             }
-        }
-        println 'conceito: ' + respostaInstance.conceito
-        // Resposta.save(respostaInstance)
-        //            respostaInstance.save(flush: true)
-        if (respostaInstance.save(flush: true)) {
-            flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
-            redirect (action: "show", id: respostaInstance.id)
-        }
-        else {
-            render(view: "create", model: [respostaInstance: respostaInstance])
-        }
-        //        }
-        //        flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
-        //        redirect(action: "show", id: respostaInstance.id)
+            respostaInstance.questao = Questao.findById(i)
+            try {
+                respostaInstance.conceito = Integer.parseInt(params.get('pergunta' + i))
+            } catch(NumberFormatException e) {
+                respostaInstance.conceito = 0
+            }
+            if (respostaInstance.save(flush: true)) {
+                flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
+                // redirect (action: "show", id: respostaInstance.id)
+                }
+                else {
+                    //render(view: "create", model: [respostaInstance: respostaInstance])
+                    println 'ERROR !!!'
+                }
+                respostaInstance = new Resposta(params)
+         }
+         //flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
+         //redirect(action: "show", id: respostaInstance.id)
+         redirect (action: "list", id: respostaInstance.id)
+         //redirect(action: "show")
     }
 
     def show = {

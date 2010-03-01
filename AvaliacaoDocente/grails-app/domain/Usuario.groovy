@@ -10,6 +10,7 @@ class Usuario {
     String passwd
     boolean enabled
     String email
+    
     /** plain password to create a MD5 password */
     String pass = '[secret]'
 
@@ -28,5 +29,11 @@ class Usuario {
         enabled()
         matricula(nullable: false, blank: false ,unique: true)
         semestreIngresso (nullable: false, blank: false)
+        description (nullable: true, blank: true)
+
     }
+
+    // num serve pra nada e eu nao sei tirar --'
+    boolean email_show = false
+    String description = ""
 }
