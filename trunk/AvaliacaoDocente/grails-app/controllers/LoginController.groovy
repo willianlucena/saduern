@@ -49,7 +49,7 @@ class LoginController {
 
         if (isLoggedIn()) {
             println 'isLogger'
-            redirect uri: '/index.gsp'
+            redirect uri: '/resposta/create'
             def userPrincipal = authenticateService.principal()
             println 'Login: ' + userPrincipal.getUsername()
             println 'Permissões: ' + userPrincipal.getAuthorities()
