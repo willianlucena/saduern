@@ -50,6 +50,9 @@ class LoginController {
         if (isLoggedIn()) {
             println 'isLogger'
             redirect uri: '/index.gsp'
+            def userPrincipal = authenticateService.principal()
+            println 'Login: ' + userPrincipal.getUsername()
+            println 'Permissões: ' + userPrincipal.getAuthorities()
             return
         }else{
             render (view: 'login')

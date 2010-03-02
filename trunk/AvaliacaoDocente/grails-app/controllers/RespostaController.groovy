@@ -1,6 +1,9 @@
+//import org.grails.plugins.springsecurity.service.AuthenticateService
+
 class RespostaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+   // def authenticateService
 
     def index = {
         redirect(action: "list", params: params)
@@ -10,6 +13,11 @@ class RespostaController {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         def respostaInstance = new Resposta()
         respostaInstance.properties = params
+//
+//        def userPrincipal = authenticateService.principal()
+//        println userPrincipal.getUsername()
+//        println userPrincipal.getAuthorities()
+
         [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count(), questaoList: Questao.list(),respostaInstance: respostaInstance]
     }
 
