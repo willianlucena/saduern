@@ -16,28 +16,40 @@ body {
     color: #333;
     font: 11px verdana, arial, helvetica, sans-serif;
 }
-#uernLogo {
-	padding:20px;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;
-}
 
-a:link, a:visited, a:hover {
+a:link, a:visited a:hover {
     color: #666;
     font-weight: bold;
     text-decoration: none;
-}
+} 
 
 h1 {
-    color: #0000CD;
+    color: #006dba;
     font-weight: normal;
     font-size: 16px;
     margin: .8em 0 .3em 0;
 }
 
+h3 {
+    font-size: 16px;
+    padding: 2px 10px 1px 0px;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #bbbbbb;
+    color: #444;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+h6 {
+    font-size: 20px;
+    padding: 10px 10px 1px 0px;
+    margin: 0 0 10px 0;
+    border-bottom: 1px solid #bbbbbb;
+    color: #444;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
 ul {
-    padding-left: 15px;
+    padding-left: 15px;	
 }
 
 input, select, textarea {
@@ -48,7 +60,7 @@ input, select, textarea {
     padding: 2px 4px;
 }
 select {
-   padding: 2px 2px 2px 0;
+   padding: 2px 2px 2px 0;   
 }
 textarea {
 	width: 250px;
@@ -61,8 +73,15 @@ input:focus, select:focus, textarea:focus {
 }
 
 .body {
-    float: left;
-    margin: 0 15px 10px 15px;
+    margin: 0 15px 10px 15px;    
+}
+
+iframe {
+    margin-bottom: 10px;
+    background-color:#f6f6f6;
+    color:#505050;
+    line-height:1.5em;
+    border: 1px solid #e4e4e4;    
 }
 
 /* NAVIGATION MENU */
@@ -70,7 +89,7 @@ input:focus, select:focus, textarea:focus {
 .nav {
     background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
     border: 1px solid #ccc;
-    border-style: solid none solid none;
+    border-style: solid none solid none;	
     margin-top: 5px;
     padding: 7px 12px;
 }
@@ -99,6 +118,12 @@ input:focus, select:focus, textarea:focus {
     padding-left: 25px;
 }
 
+.menuButton a.log {
+    background: url(../images/skin/log_view.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
 /* MESSAGES AND ERRORS */
 
 .message {
@@ -118,7 +143,7 @@ div.errors {
 }
 div.errors ul {
     list-style: none;
-    padding: 0;
+    padding: 0;	
 }
 div.errors li {
 	background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
@@ -142,7 +167,7 @@ table {
 tr {
     border: 0;
 }
-td, th {
+td, th { 
     font: 11px verdana, arial, helvetica, sans-serif;
     line-height: 12px;
     padding: 5px 6px;
@@ -269,5 +294,25 @@ th.desc a {
 }
 .buttons input.save {
     background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.view {
+    background: transparent url(../images/skin/view.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.unlock {
+    background: transparent url(../images/skin/unlock.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.lock {
+    background: transparent url(../images/skin/lock.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+.buttons input.mail {
+    background: transparent url(../images/skin/mail_send.png) 5px 50% no-repeat;
     padding-left: 28px;
 }
