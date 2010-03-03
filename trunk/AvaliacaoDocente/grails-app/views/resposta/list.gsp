@@ -18,9 +18,13 @@
             <div class="message">${flash.message}</div>
             </g:if>
             <div class="list">
-            <g:each in="${questaoList}" status="i" var="questao">
-                  ${fieldValue(bean: questao, field: "id")}) ${fieldValue(bean: questao, field: "pergunta")}:<br/>
+            <g:each in="${disciplinaInstanceList}" status="i" var="disciplina">
+                 <b> ${fieldValue(bean: disciplina, field: "nome")}</b><br/>
             </g:each>
+
+      <!--      <g:each in="${questaoList}" status="i" var="questao">
+                  ${fieldValue(bean: questao, field: "id")}) ${fieldValue(bean: questao, field: "pergunta")}:<br/>
+            </g:each>-->
 
 
 <!--                <table>
@@ -59,7 +63,7 @@
                 </table>-->
             </div>
             <div class="paginateButtons">
-                <g:paginate total="${respostaInstanceTotal}" />
+                <g:paginate total="${disciplinaInstanceTotal}" />
             </div>
         </div>
     </body>

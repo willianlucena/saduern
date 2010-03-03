@@ -34,6 +34,7 @@ class Usuario {
     }
 
     // num serve pra nada e eu nao sei tirar --'
+    //culpa do acegi
     boolean email_show = false
     String description = ""
 }
