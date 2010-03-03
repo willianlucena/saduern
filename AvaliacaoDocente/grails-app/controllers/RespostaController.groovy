@@ -1,9 +1,10 @@
-//import org.grails.plugins.springsecurity.service.AuthenticateService
+import org.grails.plugins.springsecurity.service.AuthenticateService
 
 class RespostaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-   // def authenticateService
+    def authenticateService
+    static Usuario user
 
     def index = {
         redirect(action: "list", params: params)
@@ -13,12 +14,18 @@ class RespostaController {
         params.max = Math.min(params.max ? params.int('max') : 10, 100)
         def respostaInstance = new Resposta()
         respostaInstance.properties = params
-//
-//        def userPrincipal = authenticateService.principal()
-//        println userPrincipal.getUsername()
-//        println userPrincipal.getAuthorities()
 
-        [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count(), questaoList: Questao.list(),respostaInstance: respostaInstance]
+        def userPrincipal = authenticateService.principal()
+        user = Usuario.findByUsername(userPrincipal.getUsername())
+        // println user.username
+        // println user.userRealName
+        // println user.email
+        // for (String key in user.disciplina){
+        //     println key
+        //}
+        [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count(), 
+        respostaInstance: respostaInstance,
+        disciplinaInstanceList:user.disciplina, disciplinaInstanceTotal:user.disciplina.count()]
     }
 
     def create = {
@@ -44,17 +51,17 @@ class RespostaController {
             if (respostaInstance.save(flush: true)) {
                 flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
                 // redirect (action: "show", id: respostaInstance.id)
-                }
-                else {
-                    //render(view: "create", model: [respostaInstance: respostaInstance])
-                    println 'ERROR !!!'
-                }
-                respostaInstance = new Resposta(params)
-         }
-         //flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
-         //redirect(action: "show", id: respostaInstance.id)
-         redirect (action: "list", id: respostaInstance.id)
-         //redirect(action: "show")
+            }
+            else {
+                //render(view: "create", model: [respostaInstance: respostaInstance])
+                println 'ERROR !!!'
+            }
+            respostaInstance = new Resposta(params)
+        }
+        //flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
+        //redirect(action: "show", id: respostaInstance.id)
+        redirect (action: "list", id: respostaInstance.id)
+        //redirect(action: "show")
     }
 
     def show = {

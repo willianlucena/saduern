@@ -49,10 +49,22 @@ class LoginController {
 
         if (isLoggedIn()) {
             println 'isLogger'
-            redirect uri: '/resposta/create'
+            
             def userPrincipal = authenticateService.principal()
             println 'Login: ' + userPrincipal.getUsername()
             println 'Permissões: ' + userPrincipal.getAuthorities()
+           // List permissoes = userPrincipal.getAuthorities()
+            for (String key in userPrincipal.getAuthorities()){
+                //println key
+                if (key.equals('ROLE_ADMIN')){
+                    //println 'áke if'
+                    redirect uri: '/index.gsp'
+                    return
+                }else{
+                  //  println 'áke else'
+                    redirect uri: '/resposta/create'
+                }
+            }
             return
         }else{
             render (view: 'login')
