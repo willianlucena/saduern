@@ -20,6 +20,8 @@
     <div id="wrapper">
       <div id="wrapper2">
         <div id="top-menu" style="background-color:#2c4056;">
+           <!-- teste para informar o nome do usuario logado -->
+            Bem vindo! <b><g:loggedInUserInfo field="userRealName"/></b>
             <a href="${createLinkTo(dir:'')}" class="home" style="color:white; padding-left:1em; padding-right:0.5em;">Página inicial</a>            
             <a href="${createLinkTo(dir:'home/contato')}" class="contato" style="color:white; padding-left:0.5em; padding-right:0.5em;">Contato</a>
             <a href="${createLinkTo(dir:'logout/index')}" class="login" style="color:white; padding-left:0.5em; padding-right:0.5em;">Sair</a>
