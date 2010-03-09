@@ -20,54 +20,14 @@ class RespostaController {
         def userPrincipal = authenticateService.principal()
         user = Usuario.findByUsername(userPrincipal.getUsername())
 
-
-
-
         // TESTE
         def disciplinaInstanceTotal = user.disciplina.count()
         def disciplinaInstanceList =  user.disciplina
 
-        //        def teste = DisciplinaUsuario.findAllByVotou("false")
-        //        List<Disciplina> disciplinaInstanceList = new ArrayList()
-        //        Disciplina aux = new Disciplina()
-        //        List ids = new ArrayList()
-        //        List disci = new ArrayList()
-        //        List key = new ArrayList()
-        //
-        //        def disciplinaInstanceTotal = 0
-        //        ids = teste.usuario.id
-        //        disci = teste.disciplina.id
-        //        def key0 = teste.usuario.id
-        //        def key1 = teste.disciplina.id
-        //        Map map = new HashMap()
-        //        //Map map = [ids: disci]
-        //        for (Long t1 in key1 ){
-        //            for (Long t0 in key0 ){
-        //                map.put(Usuario.findById(t0), Disciplina.findById(t1))
-        //                break
-        //            }
-        //        }
-        //
-        //        for (Long i in ids){
-        //            for (Long j in disci){
-        //                aux = Disciplina.findById(j)
-        //                if (user.id == i){
-        //                    key = map.get(i)
-        //
-        //                    if (!disciplinaInstanceList.contains(aux)){
-        //                        println "user: " + user.id + " I: " + i + "  aux: " + aux
-        //                        disciplinaInstanceList.add(aux)
-        //                        disciplinaInstanceTotal ++
-        //                    }
-        //                }else{
-        //                    break
-        //                }
-        //            }
-        //        }
-        //        println map
-        //        println " teste     "  + disciplinaInstanceList
-        //        println " teste     "  + key
-        //        disciplinaInstanceTotal /= 10
+//        def disciplinaInstanceList = DisciplinaUsuario.findAllByVotouAndUsuario("false", user)
+//        def disciplinaInstanceTotal = disciplinaInstanceList.size()
+//        println disciplinaInstanceList
+//        println disciplinaInstanceTotal
 
         [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count(), 
             respostaInstance: respostaInstance,
