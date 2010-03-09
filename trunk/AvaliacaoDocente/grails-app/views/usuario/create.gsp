@@ -101,8 +101,8 @@
 
 					<g:each in="${disciplinaList}">
 					<tr>
-						<td valign="top" class="name" align="left">${it.nome.encodeAsHTML()}</td>
-						<td align="left"><g:checkBox name="${it.nome}"/></td>
+						<td valign="top" class="name" align="left">${it.nome.encodeAsHTML()} - ${it.nucleo.encodeAsHTML()}</td>
+						<td align="left"><g:checkBox optionKey="id" name="${it.nome}"/></td>
 					</tr>
 					</g:each>
 

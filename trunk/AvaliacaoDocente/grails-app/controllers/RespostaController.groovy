@@ -24,20 +24,28 @@ class RespostaController {
         //     println key
         //}
         [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count(), 
-        respostaInstance: respostaInstance,
-        disciplinaInstanceList:user.disciplina, disciplinaInstanceTotal:user.disciplina.count()]
+            respostaInstance: respostaInstance,
+            disciplinaInstanceList:user.disciplina, disciplinaInstanceTotal:user.disciplina.count()]
     }
 
     def create = {
         def respostaInstance = new Resposta()
+        def disciplinaInstance = Disciplina.get(params.id) // em testes ainda ... qqr coisa deletar essa linha =D
+        
         respostaInstance.properties = params
-        return [respostaInstance: respostaInstance, questaoList: Questao.list()]
+        return [respostaInstance: respostaInstance, questaoList: Questao.list(),disciplinaInstance:disciplinaInstance]
     }
 
     def save = {
         int i = 0
+
+        ///ver um jeito de pegar por id, pq por nome fica ambiguo
+        params.disciplina = Disciplina.findByNome(params.get('disciplinaInstance'))
+
         def respostaInstance = new Resposta(params)
-        for (String key in params.keySet()) {
+        String key
+        while (true) {
+            key = params.keySet()
             i ++
             if(i > 14){
                 break

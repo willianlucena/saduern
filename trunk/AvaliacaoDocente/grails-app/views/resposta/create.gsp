@@ -57,10 +57,10 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="disciplina"><g:message code="resposta.disciplina.label" default="Disciplina" /></label>
+                                    <label for="disciplinaInstance"><g:message code="resposta.disciplina.label" default="Disciplina" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'disciplina', 'errors')}">
-                                    <g:select name="disciplina.id" from="${Disciplina.list()}" optionKey="id" value="${respostaInstance?.disciplina?.id}"  />
+                                    <g:textField name="disciplinaInstance" optionKey="id" value="${disciplinaInstance?.nome}" />
                                 </td>
                             </tr>
 
