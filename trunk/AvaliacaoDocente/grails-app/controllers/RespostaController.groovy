@@ -5,6 +5,8 @@ class RespostaController {
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
     def authenticateService
     static Usuario user
+    static Disciplina disc
+    static Curso curso
 
     def index = {
         redirect(action: "list", params: params)
@@ -17,31 +19,82 @@ class RespostaController {
 
         def userPrincipal = authenticateService.principal()
         user = Usuario.findByUsername(userPrincipal.getUsername())
-        // println user.username
-        // println user.userRealName
-        // println user.email
-        // for (String key in user.disciplina){
-        //     println key
-        //}
+
+
+
+
+        // TESTE
+        def disciplinaInstanceTotal = user.disciplina.count()
+        def disciplinaInstanceList =  user.disciplina
+
+        //        def teste = DisciplinaUsuario.findAllByVotou("false")
+        //        List<Disciplina> disciplinaInstanceList = new ArrayList()
+        //        Disciplina aux = new Disciplina()
+        //        List ids = new ArrayList()
+        //        List disci = new ArrayList()
+        //        List key = new ArrayList()
+        //
+        //        def disciplinaInstanceTotal = 0
+        //        ids = teste.usuario.id
+        //        disci = teste.disciplina.id
+        //        def key0 = teste.usuario.id
+        //        def key1 = teste.disciplina.id
+        //        Map map = new HashMap()
+        //        //Map map = [ids: disci]
+        //        for (Long t1 in key1 ){
+        //            for (Long t0 in key0 ){
+        //                map.put(Usuario.findById(t0), Disciplina.findById(t1))
+        //                break
+        //            }
+        //        }
+        //
+        //        for (Long i in ids){
+        //            for (Long j in disci){
+        //                aux = Disciplina.findById(j)
+        //                if (user.id == i){
+        //                    key = map.get(i)
+        //
+        //                    if (!disciplinaInstanceList.contains(aux)){
+        //                        println "user: " + user.id + " I: " + i + "  aux: " + aux
+        //                        disciplinaInstanceList.add(aux)
+        //                        disciplinaInstanceTotal ++
+        //                    }
+        //                }else{
+        //                    break
+        //                }
+        //            }
+        //        }
+        //        println map
+        //        println " teste     "  + disciplinaInstanceList
+        //        println " teste     "  + key
+        //        disciplinaInstanceTotal /= 10
+
         [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count(), 
             respostaInstance: respostaInstance,
-            disciplinaInstanceList:user.disciplina, disciplinaInstanceTotal:user.disciplina.count()]
+            disciplinaInstanceList:disciplinaInstanceList, disciplinaInstanceTotal:disciplinaInstanceTotal]
     }
 
     def create = {
         def respostaInstance = new Resposta()
         def disciplinaInstance = Disciplina.get(params.id) // em testes ainda ... qqr coisa deletar essa linha =D
-        
+        disc = disciplinaInstance
+
+        def userPrincipal = authenticateService.principal()
+        def usuarioInstance = Usuario.findByUsername(userPrincipal.getUsername())
+        user = usuarioInstance
+        curso = usuarioInstance.curso
+
         respostaInstance.properties = params
-        return [respostaInstance: respostaInstance, questaoList: Questao.list(),disciplinaInstance:disciplinaInstance]
+        return [respostaInstance: respostaInstance, questaoList: Questao.list(),disciplinaInstance:disciplinaInstance,usuarioInstance:usuarioInstance, curso:curso]
     }
 
     def save = {
         int i = 0
 
-        ///ver um jeito de pegar por id, pq por nome fica ambiguo
-        println params
-        params.disciplina = Disciplina.findByNome(params.get('disciplinaInstance'))
+        params.disciplina = disc
+        params.nucleo = user.nucleo
+        params.curso = curso
+        params.semestreAvaliacao = curso.semestreAvaliacao
 
         def respostaInstance = new Resposta(params)
         String key
