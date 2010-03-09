@@ -4,8 +4,9 @@ class RespostaController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
     def authenticateService
-    static Usuario user
     static Disciplina disc
+    static Usuario user
+    static DisciplinaUsuario discUser
     static Curso curso
 
     def index = {
@@ -20,14 +21,14 @@ class RespostaController {
         def userPrincipal = authenticateService.principal()
         user = Usuario.findByUsername(userPrincipal.getUsername())
 
-        // TESTE
-        def disciplinaInstanceTotal = user.disciplina.count()
-        def disciplinaInstanceList =  user.disciplina
+        List<DisciplinaUsuario> discUserList = DisciplinaUsuario.findAllByVotouAndUsuario("false", user)
+        List<Disciplina> disciplinaInstanceList = new ArrayList<Disciplina>()
 
-//        def disciplinaInstanceList = DisciplinaUsuario.findAllByVotouAndUsuario("false", user)
-//        def disciplinaInstanceTotal = disciplinaInstanceList.size()
-//        println disciplinaInstanceList
-//        println disciplinaInstanceTotal
+        discUserList.each {
+            disciplinaInstanceList.add(it.disciplina)
+        }
+
+        def disciplinaInstanceTotal = disciplinaInstanceList.size()
 
         [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count(), 
             respostaInstance: respostaInstance,
@@ -39,18 +40,21 @@ class RespostaController {
         def disciplinaInstance = Disciplina.get(params.id) // em testes ainda ... qqr coisa deletar essa linha =D
         disc = disciplinaInstance
 
-        def userPrincipal = authenticateService.principal()
-        def usuarioInstance = Usuario.findByUsername(userPrincipal.getUsername())
-        user = usuarioInstance
-        curso = usuarioInstance.curso
+        def usuario = authenticateService.userDomain()
+        user = Usuario.get(usuario.id)
+        curso = user.curso
 
         respostaInstance.properties = params
-        return [respostaInstance: respostaInstance, questaoList: Questao.list(),disciplinaInstance:disciplinaInstance,usuarioInstance:usuarioInstance, curso:curso]
+        return [respostaInstance: respostaInstance, questaoList: Questao.list(),disciplinaInstance:disciplinaInstance,user:user, curso:curso]
     }
 
     def save = {
         int i = 0
 
+        DisciplinaUsuario du = DisciplinaUsuario.findByUsuarioAndDisciplina(user,disc)
+        du.votou = true
+        du.save(flush: true)
+        
         params.disciplina = disc
         params.nucleo = user.nucleo
         params.curso = curso
@@ -75,15 +79,16 @@ class RespostaController {
                 // redirect (action: "show", id: respostaInstance.id)
             }
             else {
-                //render(view: "create", model: [respostaInstance: respostaInstance])
+                render(view: "create", model: [respostaInstance: respostaInstance])
                 println 'ERROR !!!'
+                return
             }
             respostaInstance = new Resposta(params)
         }
         //flash.message = "${message(code: 'default.created.message', args: [message(code: 'resposta.label', default: 'Resposta'), respostaInstance.id])}"
         //redirect(action: "show", id: respostaInstance.id)
         redirect (action: "list", id: respostaInstance.id)
-        //redirect(action: "show")
+        //redirect(action: "index") //solucao parcial, porem nao mostra mensagem alguma, coisa pouco atrativa ...
     }
 
     def show = {
