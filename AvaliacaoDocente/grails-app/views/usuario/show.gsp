@@ -69,15 +69,17 @@
 				</tr>
 
                                 <tr class="prop">
-					<td valign="top" class="name">Disciplinas:</td>
-					<td valign="top" class="value">
-						<ul>
-						<g:each in="${disciplinas}" var='name'>
-							<li>${name}</li>
-						</g:each>
-						</ul>
-					</td>
-				</tr>
+                            <td valign="top" class="name"><g:message code="person.disciplina.label" default="Disciplinas" /></td>
+
+                            <td valign="top" style="text-align: left;" class="value">
+                                <ul>
+                                <g:each in="${person.disciplina}" var="r">
+                                    <li><g:link controller="disciplina" action="show" id="${r.id}">${r?.encodeAsHTML()}</g:link></li>
+                                </g:each>
+                                </ul>
+                            </td>
+
+                        </tr>
 
 			</tbody>
 			</table>

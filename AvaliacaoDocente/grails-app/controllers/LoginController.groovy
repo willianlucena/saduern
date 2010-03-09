@@ -62,7 +62,7 @@ class LoginController {
                     return
                 }else{
                   //  println 'áke else'
-                    redirect uri: '/resposta/create'
+                    redirect uri: '/resposta/list'
                 }
             }
             return

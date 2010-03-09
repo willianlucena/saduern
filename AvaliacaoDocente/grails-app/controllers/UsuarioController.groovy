@@ -20,30 +20,31 @@ class UsuarioController {
 		[personList: Usuario.list(params)]
 	}
 
-	def show = {
-		def person = Usuario.get(params.id)
-		if (!person) {
-			flash.message = "Usuario not found with id $params.id"
-			redirect action: list
-			return
-		}
-		List roleNames = []
-		for (role in person.authorities) {
-			roleNames << role.authority
-		}
-		roleNames.sort { n1, n2 ->
-			n1 <=> n2
-		}
-                //listar disciplinas
-		List disciplinas = []
-		for (disc in person.disciplina) {
-			disciplinas << disc.nome
-		}
-		disciplinas.sort { n1, n2 ->
-			n1 <=> n2
-		}
-		[person: person, roleNames: roleNames, disciplinas: disciplinas]
-	}
+        def show = {
+                def person = Usuario.get(params.id)
+                if (!person) {
+                        flash.message = "Usuario not found with id $params.id"
+                        redirect action: list
+                        return
+                } else {
+                        List roleNames = []
+                        for (role in person.authorities) {
+                                roleNames << role.authority
+                        }
+                        roleNames.sort { n1, n2 ->
+                            n1 <=> n2
+                        }
+                        //listar disciplinas
+                        List disciplinas = []
+                        for (disc in person.disciplina) {
+                                disciplinas << disc.nome
+                        }
+                        disciplinas.sort { n1, n2 ->
+                            n1 <=> n2
+                        }
+                        [person: person, roleNames: roleNames, disciplinas: disciplinas]
+                }
+         }
 
 	/**
 	 * Pessoa: ação de exclusão. Antes de retirar uma pessoa existente,
@@ -131,6 +132,7 @@ class UsuarioController {
 
 		def person = new Usuario()
 		person.properties = params
+                println params
 		person.passwd = authenticateService.encodePassword(params.passwd)
 		if (person.save()) {
 			addRoles(person)
@@ -153,9 +155,11 @@ class UsuarioController {
         //teste add disciplina
         private void addDisciplinas(person) {
 
-                for (String key in params.keySet()) {
+
+//    '_'    remover da lista
+                for (def key in params.keySet()) {
                     println key
-			if (!key.contains('ROLE') && 'on' == params.get(key)) {
+			if (!key.contains('ROLE') && 'on' == params.get(key) && !key.contains('_')) {
                            if(Disciplina.findByNome(key) != null) {
 				Disciplina.findByNome(key).addToUsuario(person)
                            }

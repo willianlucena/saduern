@@ -102,7 +102,7 @@
 						<td valign="top" class="value ${hasErrors(bean:person,field:'disciplina','errors')}">
 							<ul>
 							<g:each var="entry" in="${disciplinaMap}">
-								<li>${entry.key.nome.encodeAsHTML()}
+								<li>${entry.key.nome.encodeAsHTML()} - ${entry.key.nucleo.encodeAsHTML()}
 									<g:checkBox name="${entry.key.nome}" value="${entry.value}"/>
 								</li>
 							</g:each>
