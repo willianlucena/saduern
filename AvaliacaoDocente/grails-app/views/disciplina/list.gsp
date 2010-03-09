@@ -25,10 +25,10 @@
                             <g:sortableColumn property="id" title="${message(code: 'disciplina.id.label', default: 'Id')}" />
                             <g:sortableColumn property="nome" title="${message(code: 'disciplina.nome.label', default: 'Nome')}" />
                             <g:sortableColumn property="codigo" title="${message(code: 'disciplina.codigo.label', default: 'Codigo')}" />
-                            <g:sortableColumn property="nucleo" title="${message(code: 'disciplina.nucleo.label', default: 'Nucleo')}" />
-                            <g:sortableColumn property="nucleo" title="${message(code: 'disciplina.departamento.label', default: 'Departamento')}" />
-                            <g:sortableColumn property="nucleo" title="${message(code: 'disciplina.semestre.label', default: 'Semestre')}" />
-                            <g:sortableColumn property="nucleo" title="${message(code: 'disciplina.situacao.label', default: 'Situação')}" />
+                            
+                            <g:sortableColumn property="departamento" title="${message(code: 'disciplina.departamento.label', default: 'Departamento')}" />
+                            <g:sortableColumn property="semestre" title="${message(code: 'disciplina.semestre.label', default: 'Semestre')}" />
+                            <g:sortableColumn property="situacao" title="${message(code: 'disciplina.situacao.label', default: 'Situação')}" />
                             <th>&nbsp;</th>
                         </tr>
                     </thead>
@@ -39,7 +39,7 @@
                             <td>${fieldValue(bean: disciplinaInstance, field: "id")}</td>
                             <td>${fieldValue(bean: disciplinaInstance, field: "nome")}</td>
                             <td>${fieldValue(bean: disciplinaInstance, field: "codigo")}</td>
-                            <td>${fieldValue(bean: disciplinaInstance, field: "nucleo")}</td>
+                       
                             <td>${fieldValue(bean: disciplinaInstance, field: "departamento")}</td>
                             <td>${fieldValue(bean: disciplinaInstance, field: "semestre")}</td>
                             <td>${fieldValue(bean: disciplinaInstance, field: "situacao")}</td>

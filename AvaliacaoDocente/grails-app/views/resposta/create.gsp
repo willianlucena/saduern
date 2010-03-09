@@ -54,6 +54,14 @@
                                     <g:textField name="semestreAvaliacao" value="${respostaInstance?.semestreAvaliacao}" />
                                 </td>
                             </tr>
+                            <tr class="prop">
+                                <td valign="top" class="name">
+                                    <label for="nucleo"><g:message code="resposta.disciplina.label" default="Núcleo" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'nucleo', 'errors')}">
+                                    <g:textField name="nucleo" value="${respostaInstance?.nucleo}" />
+                                </td>
+                            </tr>
 
                             <tr class="prop">
                                 <td valign="top" class="name">

@@ -19,7 +19,7 @@
             </g:if>
             <div class="list">
             <g:each in="${disciplinaInstanceList}" status="i" var="disciplina">
-                 <b> <g:link action="create" id="${disciplina.id}">${fieldValue(bean: disciplina, field: "nome")} - ${fieldValue(bean: disciplina, field: "nucleo")}</g:link></b><br/>
+                 <b> <g:link action="create" id="${disciplina.id}">${fieldValue(bean: disciplina, field: "nome")}</g:link></b><br/>
             </g:each>
 
       <!--      <g:each in="${questaoList}" status="i" var="questao">

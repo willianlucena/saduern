@@ -41,8 +41,13 @@
 				</tr>
 
                                 <tr class="prop">
-					<td valign="top" class="name">Matriculado?</td>
-					<td valign="top" class="value">${person.enabled}</td>
+					<td valign="top" class="name">Curso</td>
+					<td valign="top" class="value">${person.curso}</td>
+				</tr>
+
+                                <tr class="prop">
+					<td valign="top" class="name">Núcleo</td>
+					<td valign="top" class="value">${person.nucleo}</td>
 				</tr>
 
                                 <tr class="prop">

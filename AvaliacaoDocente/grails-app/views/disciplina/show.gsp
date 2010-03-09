@@ -44,13 +44,6 @@
                         </tr>
                     
                         <tr class="prop">
-                            <td valign="top" class="name"><g:message code="disciplina.nucleo.label" default="Nucleo" /></td>
-                            
-                            <td valign="top" class="value">${fieldValue(bean: disciplinaInstance, field: "nucleo")}</td>
-                            
-                        </tr>
-
-                        <tr class="prop">
                             <td valign="top" class="name"><g:message code="disciplina.semestre.label" default="Semestre" /></td>
 
                             <td valign="top" class="value">${fieldValue(bean: disciplinaInstance, field: "semestre")}</td>

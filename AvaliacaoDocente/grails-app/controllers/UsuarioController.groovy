@@ -26,24 +26,23 @@ class UsuarioController {
                         flash.message = "Usuario not found with id $params.id"
                         redirect action: list
                         return
-                } else {
-                        List roleNames = []
-                        for (role in person.authorities) {
-                                roleNames << role.authority
-                        }
-                        roleNames.sort { n1, n2 ->
-                            n1 <=> n2
-                        }
-                        //listar disciplinas
-                        List disciplinas = []
-                        for (disc in person.disciplina) {
-                                disciplinas << disc.nome
-                        }
-                        disciplinas.sort { n1, n2 ->
-                            n1 <=> n2
-                        }
-                        [person: person, roleNames: roleNames, disciplinas: disciplinas]
                 }
+                List roleNames = []
+                for (role in person.authorities) {
+                        roleNames << role.authority
+                }
+                roleNames.sort { n1, n2 ->
+                    n1 <=> n2
+                }
+                //listar disciplinas
+                List disciplinas = []
+                for (disc in person.disciplina) {
+                        disciplinas << disc.nome
+                }
+                disciplinas.sort { n1, n2 ->
+                    n1 <=> n2
+                }
+                [person: person, roleNames: roleNames, disciplinas: disciplinas]
          }
 
 	/**
@@ -134,6 +133,7 @@ class UsuarioController {
 		person.properties = params
                 println params
 		person.passwd = authenticateService.encodePassword(params.passwd)
+                person.enable = true
 		if (person.save()) {
 			addRoles(person)
                         addDisciplinas(person)

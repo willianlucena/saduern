@@ -102,7 +102,7 @@
 						<td valign="top" class="value ${hasErrors(bean:person,field:'disciplina','errors')}">
 							<ul>
 							<g:each var="entry" in="${disciplinaMap}">
-								<li>${entry.key.nome.encodeAsHTML()} - ${entry.key.nucleo.encodeAsHTML()}
+								<li>${entry.key.nome.encodeAsHTML()}
 									<g:checkBox name="${entry.key.nome}" value="${entry.value}"/>
 								</li>
 							</g:each>
@@ -118,6 +118,13 @@
                                                 <g:select name="curso.id" from="${Curso.list()}" optionKey="id" value="${usuarioInstance?.curso?.id}"  />
                                             </td>
                                         </tr>
+
+                                        <tr class="prop">
+						<td valign="top" class="name"><label for="nucleo">Núcleo:</label></td>
+						<td valign="top" class="value ${hasErrors(bean:person,field:'nucleo','errors')}">
+							<input type="text" id="nucleo" name="nucleo" value="${person?.nucleo?.encodeAsHTML()}"/>
+						</td>
+					</tr>
 
 				</tbody>
 				</table>

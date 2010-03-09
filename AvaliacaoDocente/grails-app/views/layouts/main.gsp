@@ -35,7 +35,7 @@
             </g:form>
           </div>
           <div style="margin-top:0.7em;">
-            <h7 style="border-bottom: 0px; color:white; font-family: Trebuchet MS,Georgia,Times New Roman,serif; font-size: 2.2em; font-weight: bold;">SADUERN - Sistema de Avaliação Doscente UERN</h7>
+            <h7 style="border-bottom: 0px; color:white; font-family: Trebuchet MS,Georgia,Times New Roman,serif; font-size: 2.2em; font-weight: bold;">SADUERN - Sistema de Avaliação Docente UERN</h7>
             <div id="main-menu">
             <ul style="margin-top:1.1em;">
               <li><a href="${createLinkTo(dir:'avaliacao')}" class="avaliacao" action="list" style="color:white;" id="linkAvaliacao">Avaliacao</a></li>
@@ -77,11 +77,8 @@
             Universidade do Estado do Rio Grande do Norte<br>
             Sistema de Avaliação Docente<br>
             Desenvolvido pelos Alunos:<br>
-            Everton Fagner<br>
-            Felipe Soares<br>
-            Jefferson Willian<br>
-            Maxwell de Paiva Lucena<br>
-            2010
+            Everton Fagner; Felipe Costa; Willian Lucena; Maxwell Paiva<br/>
+            2010© - JerryGonsa
             </div>
           </div>
         </div>
