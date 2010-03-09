@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>SADUERN - Sistema de Avaliação Doscente UERN</title>
+        <title>SADUERN - Sistema de Avaliação Docente UERN</title>
 		<meta name="layout" content="main" />
 		<style type="text/css" media="screen">
 

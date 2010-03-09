@@ -40,6 +40,7 @@ class RespostaController {
         int i = 0
 
         ///ver um jeito de pegar por id, pq por nome fica ambiguo
+        println params
         params.disciplina = Disciplina.findByNome(params.get('disciplinaInstance'))
 
         def respostaInstance = new Resposta(params)

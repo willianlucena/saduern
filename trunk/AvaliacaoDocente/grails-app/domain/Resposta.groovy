@@ -2,16 +2,18 @@
 class Resposta {
 
     Long id
-    Disciplina disciplina
-    Questao questao
     Integer conceito
-    Curso curso
     String semestreAvaliacao
+    String nucleo
+    Disciplina disciplina
+    Curso curso
+    Questao questao
 
     static belongsTo = Disciplina
     
     static constraints = {
-        conceito (nullable:true,blank:true)
+        conceito (nullable:false,blank:false)
+        nucleo (nullable:false,blank:false)
     }
    
 }

@@ -48,14 +48,14 @@
                                 </td>
                             </tr>
                         
-                            <tr class="prop">
+                     <!--       <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="nucleo"><g:message code="disciplina.nucleo.label" default="Nucleo" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'nucleo', 'errors')}">
                                     <g:textField name="nucleo" value="${disciplinaInstance?.nucleo}" />
                                 </td>
-                            </tr>
+                            </tr>-->
                             
                             <tr class="prop">
                                 <td valign="top" class="name">

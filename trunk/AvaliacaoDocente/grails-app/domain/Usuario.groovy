@@ -17,6 +17,7 @@ class Usuario {
     String matricula
     Curso curso
     String semestreIngresso
+    String nucleo
 
     String toString(){
         userRealName
@@ -29,12 +30,13 @@ class Usuario {
         enabled()
         matricula(nullable: false, blank: false ,unique: true)
         semestreIngresso (nullable: false, blank: false)
-        description (nullable: true, blank: true)
+        //description (nullable: true, blank: true)
+        nucleo (nullable: true, blank: true)
 
     }
 
-    // num serve pra nada e eu nao sei tirar --'
+    // num serve pra nada e eu nao sei tirar ¬¬
     //culpa do acegi
-    boolean email_show = false
-    String description = ""
+    //boolean email_show = false
+    //String description = ""
 }

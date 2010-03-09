@@ -23,7 +23,8 @@
 					<g:sortableColumn property="userRealName" title="Nome" />
                                         <g:sortableColumn property="username" title="Login" />
 					<g:sortableColumn property="matricula" title="Matricula" />
-					<g:sortableColumn property="enabled" title="Matriculado?" />
+					<g:sortableColumn property="curso" title="Curso" />
+					<g:sortableColumn property="nucleo" title="Núcleo" />
 					<g:sortableColumn property="semestreIngresso" title="Semestre de Ingresso" />
 					<th>&nbsp;</th>
 				</tr>
@@ -35,7 +36,8 @@
 					<td>${person.userRealName?.encodeAsHTML()}</td>
                                         <td>${person.username?.encodeAsHTML()}</td>
 					<td>${person.matricula?.encodeAsHTML()}</td>
-					<td>${person.enabled?.encodeAsHTML()}</td>
+					<td>${person.curso?.encodeAsHTML()}</td>
+					<td>${person.nucleo?.encodeAsHTML()}</td>
 					<td>${person.semestreIngresso?.encodeAsHTML()}</td>
 					
 					<td class="actionButtons">
