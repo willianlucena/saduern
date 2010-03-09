@@ -51,9 +51,14 @@ class LoginController {
             println 'isLogger'
             
             def userPrincipal = authenticateService.principal()
-            println 'Login: ' + userPrincipal.getUsername()
-            println 'Permissões: ' + userPrincipal.getAuthorities()
-           // List permissoes = userPrincipal.getAuthorities()
+            def usuarioInstance = Usuario.findByUsername(userPrincipal.getUsername())
+            //def curso = usuarioInstance.curso
+//            Float f = Float.parseFloat(curso.semestreAvaliacao)
+//            f += 0.1 //2009.1
+//            f += 0.9 //2010.2
+//            println 'Login: ' + userPrincipal.getUsername()
+//            println 'Permissões: ' + userPrincipal.getAuthorities()
+            // List permissoes = userPrincipal.getAuthorities()
             for (String key in userPrincipal.getAuthorities()){
                 //println key
                 if (key.equals('ROLE_ADMIN')){
@@ -61,7 +66,7 @@ class LoginController {
                     redirect uri: '/index.gsp'
                     return
                 }else{
-                  //  println 'áke else'
+                    //  println 'áke else'
                     redirect uri: '/resposta/list'
                 }
             }

@@ -14,6 +14,7 @@ class Resposta {
     static constraints = {
         conceito (nullable:false,blank:false)
         nucleo (nullable:false,blank:false)
+        semestreAvaliacao (nullable:false,blank:false)
     }
    
 }
