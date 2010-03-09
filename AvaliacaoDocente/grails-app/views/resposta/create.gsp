@@ -41,10 +41,10 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="usuarioInstance"><g:message code="usuario.nucleo.label" default="Núcleo:" /></label>
+                                    <label for="user"><g:message code="usuario.nucleo.label" default="Núcleo:" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'nucleo', 'errors')}">
-                                     <label for="usuarioInstance"><g:message  name="usuarioInstance" code="usuario.nucleo.label" default="${usuarioInstance?.nucleo}" /></label>
+                                     <label for="user"><g:message  name="user" code="usuario.nucleo.label" default="${user?.nucleo}" /></label>
                                 </td>
                             </tr>
 
