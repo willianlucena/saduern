@@ -154,11 +154,12 @@ class UsuarioController {
 
     //teste add disciplina
     private void addDisciplinas(person) {
-
+        Disciplina d = new Disciplina()
         for (def key in params.keySet()) {
             if (!key.contains('ROLE') && 'on' == params.get(key)) {
-                if(Disciplina.findByNome(key) != null) {
-                    Disciplina.findByNome(key).addToUsuario(person)
+                d = Disciplina.findByNome(key)
+                if(d != null) {
+                    d.addToUsuario(person)
                 }
             }
         }
