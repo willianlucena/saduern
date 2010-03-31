@@ -1,8 +1,9 @@
 
 class Usuario {
     static transients = ['pass']
-    static hasMany = [authorities: Permissao, disciplina: Disciplina]
+
     static belongsTo = [Permissao, Disciplina, Curso]
+    static hasMany = [authorities: Permissao, disciplina: Disciplina]
 
     String username
     String userRealName
@@ -30,7 +31,6 @@ class Usuario {
         enabled()
         matricula(nullable: false, blank: false ,unique: true)
         semestreIngresso (nullable: false, blank: false)
-        //description (nullable: true, blank: true)
         nucleo (nullable: true, blank: true)
 
     }

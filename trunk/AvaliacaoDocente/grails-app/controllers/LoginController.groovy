@@ -31,11 +31,9 @@ class LoginController {
 
     def index = {
         if (isLoggedIn()) {
-            println 'loGool'
             redirect uri: '/'
         }
         else {
-            println 'index params: ' + params
             redirect action: auth, params: params
         }
     }
@@ -44,29 +42,15 @@ class LoginController {
      * Show the login page.
      */
     def auth = {
-        println 'AUTH'
         nocache response
 
         if (isLoggedIn()) {
-            println 'isLogger'
-            
-            def userPrincipal = authenticateService.principal()
-            def usuarioInstance = Usuario.findByUsername(userPrincipal.getUsername())
-            //def curso = usuarioInstance.curso
-//            Float f = Float.parseFloat(curso.semestreAvaliacao)
-//            f += 0.1 //2009.1
-//            f += 0.9 //2010.2
-//            println 'Login: ' + userPrincipal.getUsername()
-//            println 'Permissões: ' + userPrincipal.getAuthorities()
-            // List permissoes = userPrincipal.getAuthorities()
+            def userPrincipal = authenticateService.userDomain()
             for (String key in userPrincipal.getAuthorities()){
-                //println key
                 if (key.equals('ROLE_ADMIN')){
-                    //println 'áke if'
                     redirect uri: '/index.gsp'
                     return
                 }else{
-                    //  println 'áke else'
                     redirect uri: '/resposta/list'
                 }
             }

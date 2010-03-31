@@ -22,11 +22,6 @@
                  <b> <g:link action="create" id="${disciplina.id}">${fieldValue(bean: disciplina, field: "nome")}</g:link></b><br/>
             </g:each>
 
-      <!--      <g:each in="${questaoList}" status="i" var="questao">
-                  ${fieldValue(bean: questao, field: "id")}) ${fieldValue(bean: questao, field: "pergunta")}:<br/>
-            </g:each>-->
-
-
 <!--                <table>
                     <thead>
                         <tr>
