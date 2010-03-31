@@ -64,7 +64,7 @@
 
                         </tr>
                     
-                        <tr class="prop">
+                       <!-- <tr class="prop">
                             <td valign="top" class="name"><g:message code="disciplina.resposta.label" default="Resposta" /></td>
                             
                             <td valign="top" style="text-align: left;" class="value">
@@ -75,7 +75,7 @@
                                 </ul>
                             </td>
                             
-                        </tr>
+                        </tr>-->
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="disciplina.usuario.label" default="Usuario" /></td>
