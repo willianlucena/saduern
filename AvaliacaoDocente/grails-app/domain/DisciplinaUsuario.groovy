@@ -1,5 +1,5 @@
 
-class DisciplinaUsuario {
+class DisciplinaUsuario implements Serializable {
     Long id
     Usuario usuario
     Disciplina disciplina
@@ -7,14 +7,13 @@ class DisciplinaUsuario {
     
     static mapping = {
         table 'disciplina_usuario'
+        id composite: [ 'usuario', 'disciplina']
         version false
-
     }
 
     static constraints = {
-        id (nullable: false, blank: false, unique: true)
-        disciplina (nullable: false, blank: false)
         usuario (nullable: false, blank: false)
+        disciplina (nullable: false, blank: false)
     }
 }
 

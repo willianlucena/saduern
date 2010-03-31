@@ -152,18 +152,16 @@ class UsuarioController {
         }
     }
 
-    //teste add disciplina
     private void addDisciplinas(person) {
-        Disciplina d = new Disciplina()
+        Disciplina disciplina = new Disciplina()
         for (def key in params.keySet()) {
             if (!key.contains('ROLE') && 'on' == params.get(key)) {
-                d = Disciplina.findByNome(key)
-                if(d != null) {
-                    d.addToUsuario(person)
+                disciplina = Disciplina.findByNome(key)
+                if(disciplina != null) {
+                    disciplina.addToUsuario(person)
                 }
             }
         }
-
     }
 
     private Map buildPersonModel(person) {

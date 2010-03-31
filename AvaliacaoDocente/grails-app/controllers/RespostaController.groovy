@@ -14,12 +14,9 @@ class RespostaController {
     }
 
     def list = {
-        params.max = Math.min(params.max ? params.int('max') : 10, 100)
-        def respostaInstance = new Resposta()
-        respostaInstance.properties = params
 
-        def userPrincipal = authenticateService.principal()
-        user = Usuario.findByUsername(userPrincipal.getUsername())
+        def usuario = authenticateService.userDomain()
+        user = Usuario.get(usuario.id)
 
         List<DisciplinaUsuario> discUserList = DisciplinaUsuario.findAllByVotouAndUsuario("false", user)
         List<Disciplina> disciplinaInstanceList = new ArrayList<Disciplina>()
@@ -28,16 +25,12 @@ class RespostaController {
             disciplinaInstanceList.add(it.disciplina)
         }
 
-        def disciplinaInstanceTotal = disciplinaInstanceList.size()
-
-        [respostaInstanceList: Resposta.list(params), respostaInstanceTotal: Resposta.count(), 
-            respostaInstance: respostaInstance,
-            disciplinaInstanceList:disciplinaInstanceList, disciplinaInstanceTotal:disciplinaInstanceTotal]
+        [disciplinaInstanceList:disciplinaInstanceList, disciplinaInstanceTotal:disciplinaInstanceList.size()]
     }
 
     def create = {
         def respostaInstance = new Resposta()
-        def disciplinaInstance = Disciplina.get(params.id) // em testes ainda ... qqr coisa deletar essa linha =D
+        def disciplinaInstance = Disciplina.get(params.id) 
         disc = disciplinaInstance
 
         def usuario = authenticateService.userDomain()
