@@ -37,15 +37,15 @@
             <h7 style="border-bottom: 0px; color:white; font-family: Trebuchet MS,Georgia,Times New Roman,serif; font-size: 2.2em; font-weight: bold;">SADUERN - Sistema de Avaliação Docente UERN</h7>
             <div id="main-menu">
             <ul style="margin-top:1.1em;">
-              <li><a href="${createLinkTo(dir:'avaliacao')}" class="avaliacao" action="list" style="color:white;" id="linkAvaliacao">Avaliacao</a></li>
-              <li><a href="${createLinkTo(dir:'curso')}" class="curso" action="list" style="color:white;" id="linkCurso">Curso</a></li>
-              <li><a href="${createLinkTo(dir:'departamento')}" class="departamento" action="list" style="color:white;" id="linkDepartamento">Departamento</a></li>
-              <li><a href="${createLinkTo(dir:'disciplina')}" class="disciplina" action="list" style="color:white;" id="linkDisciplina">Disciplina</a></li>
-              <li><a href="${createLinkTo(dir:'mapeamento')}" class="mapeamento" action="list" style="color:white;" id="linkMapeamento">Mapeamentos</a></li>
-              <li><a href="${createLinkTo(dir:'permissao')}" class="permisao" action="list" style="color:white;" id="linkPermissao">Permissão</a></li>
-              <li><a href="${createLinkTo(dir:'questao')}" class= "questao" action="list" style="color:white;" id="linkQestao">Questão</a></li>
-              <li><a href="${createLinkTo(dir:'resposta')}" class= "resposta" action="list" style="color:white;" id="linkResposta">Resposta</a></li>
-              <li><a href="${createLinkTo(dir:'usuario')}" class= "usuario" action="list" style="color:white;" id="linkUsuario">Usuário</a></li>
+              <li><a href="${createLinkTo(dir:'avaliacao')}" class="avaliacao" style="color:white;" id="linkAvaliacao">Avaliacao</a></li>
+              <li><a href="${createLinkTo(dir:'curso')}" class="curso" style="color:white;" id="linkCurso">Curso</a></li>
+              <li><a href="${createLinkTo(dir:'departamento')}" class="departamento"style="color:white;" id="linkDepartamento">Departamento</a></li>
+              <li><a href="${createLinkTo(dir:'disciplina')}" class="disciplina" style="color:white;" id="linkDisciplina">Disciplina</a></li>
+              <li><a href="${createLinkTo(dir:'mapeamento')}" class="mapeamento" style="color:white;" id="linkMapeamento">Mapeamentos</a></li>
+              <li><a href="${createLinkTo(dir:'permissao')}" class="permisao" style="color:white;" id="linkPermissao">Permissão</a></li>
+              <li><a href="${createLinkTo(dir:'questao')}" class= "questao" style="color:white;" id="linkQestao">Questão</a></li>
+              <li><a href="${createLinkTo(dir:'resposta')}" class= "resposta" style="color:white;" id="linkResposta">Resposta</a></li>
+              <li><a title="Teste"href="${createLinkTo(dir:'usuario')}" class= "usuario" style="color:white;" id="linkUsuario">Usuário</a></li>
             </ul>
             </div>
             <!--<table border="0">

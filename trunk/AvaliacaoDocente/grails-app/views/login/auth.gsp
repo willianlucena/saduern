@@ -11,9 +11,13 @@
 	margin:0px auto;
 	text-align:left;
 	padding:10px;
-	border-top:1px dashed #499ede;
-	border-bottom:1px dashed #499ede;
-	background-color:#EEF;
+	/*background-color:#EEF;*/
+        background-color:#FFF;
+        border-top:1px double #499ede;
+	border-bottom:1px double #499ede;
+      	border-right: 1px double #499ede;
+	border-left: 1px double #499ede;
+
 }
 #login .inner .fheader {
 	padding:4px;margin:3px 0px 3px 0;color:#2e3741;font-size:14px;font-weight:bold;
@@ -23,7 +27,7 @@
 	margin: 0;
 	padding: 5px 0 8px 0;
 	padding-left: 105px;
-	border-top: 1px dashed gray;
+	/*border-top: 1px dashed gray;*/
 	margin-bottom: 10px;
 	height: 1%;
 }
