@@ -36,16 +36,6 @@ class DisciplinaController {
             redirect(action: "list")
         }
         else {
-            Integer geral = 0
-            println disciplinaInstance
-            Set<Resposta> respostas = disciplinaInstance.resposta
-            respostas.each {
-                println "ID: " + it.id
-                println "Questão: " + it.questao
-                println "Conceito: " + it.conceito
-                geral += it.conceito
-            }
-            println "Geral: " + geral
             [disciplinaInstance: disciplinaInstance]
         }
     }

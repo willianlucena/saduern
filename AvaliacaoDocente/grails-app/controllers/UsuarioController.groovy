@@ -133,7 +133,7 @@ class UsuarioController {
         person.properties = params
         println params
         person.passwd = authenticateService.encodePassword(params.passwd)
-        person.enable = true
+        person.enabled = true
         if (person.save()) {
             addRoles(person)
             addDisciplinas(person)
@@ -153,12 +153,16 @@ class UsuarioController {
     }
 
     private void addDisciplinas(person) {
+        println params
         Disciplina disciplina = new Disciplina()
         for (def key in params.keySet()) {
             if (!key.contains('ROLE') && 'on' == params.get(key)) {
                 disciplina = Disciplina.findByNome(key)
                 if(disciplina != null) {
                     disciplina.addToUsuario(person)
+//                    DisciplinaUsuario du = DisciplinaUsuario.findByUsuarioAndDisciplina(person,disciplina)
+//                    du.votou = false
+//                    du.save(flush: true)
                 }
             }
         }

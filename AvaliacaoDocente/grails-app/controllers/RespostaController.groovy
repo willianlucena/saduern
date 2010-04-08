@@ -38,7 +38,7 @@ class RespostaController {
         curso = user.curso
 
         respostaInstance.properties = params
-        return [respostaInstance: respostaInstance, questaoList: Questao.list(),disciplinaInstance:disciplinaInstance,user:user, curso:curso]
+        return [respostaInstance: respostaInstance, questaoList: Questao.list(),disciplinaInstance:disciplinaInstance,user:user, curso:curso,config:Configuracao.get(1)]
     }
 
     def save = {
@@ -47,11 +47,11 @@ class RespostaController {
         DisciplinaUsuario du = DisciplinaUsuario.findByUsuarioAndDisciplina(user,disc)
         du.votou = true
         du.save(flush: true)
-        
+        Configuracao config = Configuracao.get(1)
         params.disciplina = disc
         params.nucleo = user.nucleo
         params.curso = curso
-        params.semestreAvaliacao = curso.semestreAvaliacao
+        params.semestreAvaliacao = config.semestreAvaliacao
 
         def respostaInstance = new Resposta(params)
         String key
