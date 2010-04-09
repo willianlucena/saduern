@@ -52,13 +52,7 @@
 							<input type="text" id="matricula" name="matricula" value="${person.matricula?.encodeAsHTML()}"/>
 						</td>
 					</tr>
-					<tr class="prop">
-						<td valign="top" class="name"><label for="enabled">Matriculado?</label></td>
-						<td valign="top" class="value ${hasErrors(bean:person,field:'enabled','errors')}">
-							<g:checkBox name="enabled" value="${person.enabled}" ></g:checkBox>
-						</td>
-					</tr>
-
+				
                                         <tr class="prop">
                                             <td valign="top" class="name">
                                                 <label for="semestreIngresso"><g:message code="usuario.semestreIngresso.label" default="Semestre Ingresso" /></label>
@@ -67,6 +61,7 @@
                                                 <g:textField name="semestreIngresso" value="${usuarioInstance?.semestreIngresso}" />
                                             </td>
                                         </tr>
+
 
                                         <tr class="prop">
                                             <td valign="top" class="name">
@@ -77,6 +72,15 @@
                                             </td>
                                         </tr>
 
+                                        <tr class="prop">
+                                            <td valign="top" class="name">
+                                                <label for="nucleo"><g:message code="usuario.nucleo.label" default="Núcleo" /></label>
+                                            </td>
+                                            <td valign="top" class="value ${hasErrors(bean: usuarioInstance, field: 'nucleo', 'errors')}">
+                                                <g:textField name="nucleo" value="${usuarioInstance?.nucleo}" />
+                                            </td>
+                                        </tr>
+                                        
 					<tr class="prop">
 						<td valign="top" class="name"><label for="email">Email:</label></td>
 						<td valign="top" class="value ${hasErrors(bean:person,field:'email','errors')}">

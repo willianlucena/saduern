@@ -6,6 +6,7 @@ class Disciplina {
     String codigo
     String semestre
     String situacao
+    Boolean avaliar
 
     static hasMany = [usuario: Usuario, resposta: Resposta]
     static belongsTo = [departamento: Departamento]
@@ -19,5 +20,6 @@ class Disciplina {
         codigo (nullable:true, blank:true)
         semestre (nullable:false, blank:false)
         situacao (nullable:false, blank:false)
+        avaliar (nullable:true, blank:true)
     }
 }

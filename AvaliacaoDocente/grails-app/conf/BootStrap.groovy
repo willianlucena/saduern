@@ -2,7 +2,7 @@ class BootStrap {
     def authenticateService
 
     def init = { servletContext ->
-        //ainda nao ta funcioando ...
+        //ainda nao ta funcionado ... =/
         if(!Usuario.findAll()){
             def curso = new Curso(nome:"teste",semestreAvaliacao:"1234").save()
             def mapeamento = new Mapeamento(url:"/usuario/**",configAttribute:"ROLE_ADMIN")

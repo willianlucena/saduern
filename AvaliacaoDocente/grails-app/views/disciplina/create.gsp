@@ -4,7 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="layout" content="main" />
-    //    <g:set var="entityName" value="${message(code: 'disciplina.label', default: 'Disciplina')}" />
+        <g:set var="entityName" value="${message(code: 'disciplina.label', default: 'Disciplina')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -45,15 +45,6 @@
                                 </td>
                             </tr>
                         
-                           <!-- <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="nucleo"><g:message code="disciplina.nucleo.label" default="Nucleo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'nucleo', 'errors')}">
-                                    <g:textField name="nucleo" value="${disciplinaInstance?.nucleo}" />
-                                </td>
-                            </tr>-->
-
                             <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="semestre"><g:message code="disciplina.semestre.label" default="Semestre" /></label>
