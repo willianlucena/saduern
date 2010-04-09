@@ -47,15 +47,6 @@
                                     <g:textField name="codigo" value="${disciplinaInstance?.codigo}" />
                                 </td>
                             </tr>
-                        
-                     <!--       <tr class="prop">
-                                <td valign="top" class="name">
-                                  <label for="nucleo"><g:message code="disciplina.nucleo.label" default="Nucleo" /></label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'nucleo', 'errors')}">
-                                    <g:textField name="nucleo" value="${disciplinaInstance?.nucleo}" />
-                                </td>
-                            </tr>-->
                             
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -75,7 +66,7 @@
                                 </td>
                             </tr>
                         
-                            <tr class="prop">
+                          <!--  <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="resposta"><g:message code="disciplina.resposta.label" default="Resposta" /></label>
                                 </td>
@@ -87,7 +78,7 @@
                                 <g:link controller="resposta" action="create" params="['disciplina.id': disciplinaInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'resposta.label', default: 'Resposta')])}</g:link>
 
                                 </td>
-                            </tr>
+                            </tr>-->
 
                             <tr class="prop">
                                 <td valign="top" class="name">
@@ -98,14 +89,14 @@
                                 </td>
                             </tr>
 
-                            <tr class="prop">
+                       <!--     <tr class="prop">
                                 <td valign="top" class="name">
                                   <label for="usuario"><g:message code="disciplina.usuario.label" default="Usuario" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'usuario', 'errors')}">
                                     <g:select name="usuario" from="${Usuario.list()}" multiple="yes" optionKey="id" size="5" value="${disciplinaInstance?.usuario}" />
                                 </td>
-                            </tr>
+                            </tr>-->
                         
                         </tbody>
                     </table>

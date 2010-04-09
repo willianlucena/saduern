@@ -32,10 +32,10 @@
 
                             <tr class="prop">
                                 <td valign="top" class="name">
-                                    <label for="curso"><g:message code="curso.label" default="Semestre da Avaliação:" /></label>
+                                    <label for="config"><g:message code="config.label" default="Semestre da Avaliação:" /></label>
                                 </td>
-                                <td valign="top" class="value ${hasErrors(bean: curso, field: 'semestreAvaliacao', 'errors')}">
-                                    <label for="curso"><g:message  name="curso" code="curso.label" default="${curso?.semestreAvaliacao}" /></label>
+                                <td valign="top" class="value ${hasErrors(bean: config, field: 'semestreAvaliacao', 'errors')}">
+                                    <label for="config"><g:message  name="config" code="config.label" default="${config?.semestreAvaliacao}" /></label>
                                 </td>
                             </tr>
 

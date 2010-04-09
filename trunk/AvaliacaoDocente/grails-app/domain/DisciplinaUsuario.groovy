@@ -1,6 +1,6 @@
 
 class DisciplinaUsuario implements Serializable {
-    Long id
+    
     Usuario usuario
     Disciplina disciplina
     Boolean votou
@@ -14,6 +14,7 @@ class DisciplinaUsuario implements Serializable {
     static constraints = {
         usuario (nullable: false, blank: false)
         disciplina (nullable: false, blank: false)
+        votou (nullable: true, blank: true)
     }
 }
 

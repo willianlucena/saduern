@@ -45,7 +45,11 @@
               <li><a href="${createLinkTo(dir:'permissao')}" class="permisao" style="color:white;" id="linkPermissao">Permissão</a></li>
               <li><a href="${createLinkTo(dir:'questao')}" class= "questao" style="color:white;" id="linkQestao">Questão</a></li>
               <li><a href="${createLinkTo(dir:'resposta')}" class= "resposta" style="color:white;" id="linkResposta">Resposta</a></li>
-              <li><a title="Teste"href="${createLinkTo(dir:'usuario')}" class= "usuario" style="color:white;" id="linkUsuario">Usuário</a></li>
+              <li><a href="${createLinkTo(dir:'usuario')}" class= "usuario" style="color:white;" id="linkUsuario">Usuário</a></li>
+              <li><a href="${createLinkTo(dir:'apuracao')}" class= "apuracao" style="color:white;" id="resultado">Resultado</a></li>
+              <li><a href="${createLinkTo(dir:'apuracao/apurar')}" class= "apuracao" style="color:white;" id="apurar">Apurar</a></li>
+              <li><a href="${createLinkTo(dir:'configuracao')}" class= "configuracao" style="color:white;" id="configuracao">Configuração</a></li>
+
             </ul>
             </div>
             <!--<table border="0">

@@ -1,5 +1,4 @@
 <head>
-  
   <title>SADUERN - Sistema de Avaliação Docente - UERN</title>
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="${createLinkTo(dir:'css',file:'LoginOk.css')}" />

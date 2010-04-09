@@ -3,7 +3,7 @@ class Curso {
 
     Long id
     String nome
-    String semestreAvaliacao
+    String codigo
 
     String toString(){
         nome
@@ -11,6 +11,6 @@ class Curso {
 
     static constraints = {
         nome (nullable:true,blank:true)
-        semestreAvaliacao (nullable:false,blank:false)
+        codigo (nullable:true,blank:true)
     }
 }
