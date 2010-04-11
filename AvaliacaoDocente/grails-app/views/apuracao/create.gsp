@@ -41,7 +41,7 @@
                                     <label for="quantidade"><g:message code="apuracao.quantidade.label" default="Quantidade" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: apuracaoInstance, field: 'quantidade', 'errors')}">
-                                    <g:textField name="quantidade" value="${fieldValue(bean: apuracaoInstance, field: 'quantidade')}" />
+                                    <input name="quantidade" value="${fieldValue(bean: apuracaoInstance, field: 'quantidade')}" />
                                 </td>
                             </tr>
                         
@@ -50,7 +50,7 @@
                                     <label for="conceito1"><g:message code="apuracao.conceito1.label" default="Conceito1" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: apuracaoInstance, field: 'conceito1', 'errors')}">
-                                    <g:textField name="conceito1" value="${fieldValue(bean: apuracaoInstance, field: 'conceito1')}" />
+                                    <input name="conceito1" value="${fieldValue(bean: apuracaoInstance, field: 'conceito1')}" />
                                 </td>
                             </tr>
                         
@@ -59,7 +59,7 @@
                                     <label for="conceito2"><g:message code="apuracao.conceito2.label" default="Conceito2" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: apuracaoInstance, field: 'conceito2', 'errors')}">
-                                    <g:textField name="conceito2" value="${fieldValue(bean: apuracaoInstance, field: 'conceito2')}" />
+                                    <input name="conceito2" value="${fieldValue(bean: apuracaoInstance, field: 'conceito2')}" />
                                 </td>
                             </tr>
                         
@@ -68,7 +68,7 @@
                                     <label for="conceito3"><g:message code="apuracao.conceito3.label" default="Conceito3" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: apuracaoInstance, field: 'conceito3', 'errors')}">
-                                    <g:textField name="conceito3" value="${fieldValue(bean: apuracaoInstance, field: 'conceito3')}" />
+                                    <input name="conceito3" value="${fieldValue(bean: apuracaoInstance, field: 'conceito3')}" />
                                 </td>
                             </tr>
                         
@@ -77,7 +77,7 @@
                                     <label for="conceito4"><g:message code="apuracao.conceito4.label" default="Conceito4" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: apuracaoInstance, field: 'conceito4', 'errors')}">
-                                    <g:textField name="conceito4" value="${fieldValue(bean: apuracaoInstance, field: 'conceito4')}" />
+                                    <input name="conceito4" value="${fieldValue(bean: apuracaoInstance, field: 'conceito4')}" />
                                 </td>
                             </tr>
                         
@@ -86,7 +86,7 @@
                                     <label for="nulas"><g:message code="apuracao.nulas.label" default="Nulas" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: apuracaoInstance, field: 'nulas', 'errors')}">
-                                    <g:textField name="nulas" value="${fieldValue(bean: apuracaoInstance, field: 'nulas')}" />
+                                    <input name="nulas" value="${fieldValue(bean: apuracaoInstance, field: 'nulas')}" />
                                 </td>
                             </tr>
                         
@@ -95,7 +95,7 @@
                                     <label for="media"><g:message code="apuracao.media.label" default="Media" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: apuracaoInstance, field: 'media', 'errors')}">
-                                    <g:textField name="media" value="${fieldValue(bean: apuracaoInstance, field: 'media')}" />
+                                    <input name="media" value="${fieldValue(bean: apuracaoInstance, field: 'media')}" />
                                 </td>
                             </tr>
                         

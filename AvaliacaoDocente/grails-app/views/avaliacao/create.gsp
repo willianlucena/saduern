@@ -32,7 +32,7 @@
                                     <label for="pontuacao"><g:message code="avaliacao.pontuacao.label" default="Pontuacao" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: avaliacaoInstance, field: 'pontuacao', 'errors')}">
-                                    <g:textField name="pontuacao" value="${fieldValue(bean: avaliacaoInstance, field: 'pontuacao')}" />
+                                    <input name="pontuacao" value="${fieldValue(bean: avaliacaoInstance, field: 'pontuacao')}" />
                                 </td>
                             </tr>
                         
@@ -50,7 +50,7 @@
                                     <label for="semestre"><g:message code="avaliacao.semestre.label" default="Semestre" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: avaliacaoInstance, field: 'semestre', 'errors')}">
-                                    <g:textField name="semestre" value="${avaliacaoInstance?.semestre}" />
+                                    <input name="semestre" value="${avaliacaoInstance?.semestre}" />
                                 </td>
                             </tr>
                         

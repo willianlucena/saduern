@@ -58,7 +58,7 @@
                                                 <label for="semestreIngresso"><g:message code="usuario.semestreIngresso.label" default="Semestre Ingresso" /></label>
                                             </td>
                                             <td valign="top" class="value ${hasErrors(bean: usuarioInstance, field: 'semestreIngresso', 'errors')}">
-                                                <g:textField name="semestreIngresso" value="${usuarioInstance?.semestreIngresso}" />
+                                                <input name="semestreIngresso" value="${usuarioInstance?.semestreIngresso}" />
                                             </td>
                                         </tr>
 
@@ -77,7 +77,7 @@
                                                 <label for="nucleo"><g:message code="usuario.nucleo.label" default="Núcleo" /></label>
                                             </td>
                                             <td valign="top" class="value ${hasErrors(bean: usuarioInstance, field: 'nucleo', 'errors')}">
-                                                <g:textField name="nucleo" value="${usuarioInstance?.nucleo}" />
+                                                <input name="nucleo" value="${usuarioInstance?.nucleo}" />
                                             </td>
                                         </tr>
                                         

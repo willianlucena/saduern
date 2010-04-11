@@ -35,7 +35,7 @@
                                   <label for="pergunta"><g:message code="questao.pergunta.label" default="Pergunta" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: questaoInstance, field: 'pergunta', 'errors')}">
-                                    <g:textField name="pergunta" value="${questaoInstance?.pergunta}" />
+                                    <input name="pergunta" value="${questaoInstance?.pergunta}" />
                                 </td>
                             </tr>
                         
