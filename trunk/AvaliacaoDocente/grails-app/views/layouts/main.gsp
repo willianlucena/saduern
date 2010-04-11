@@ -13,6 +13,7 @@
 
 <!-- page specific tags -->
     <g:layoutHead />
+    <script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'jquery-1.4.1.js')}" ></script>
     <g:javascript library="application" />
     <g:javascript library="navegation" />
   </head>
@@ -29,7 +30,7 @@
           <div id="quick-search">
             <g:form url='[controller: "searchable", action: "index"]' id="searchableForm" name="searchableForm" method="get">
               <span style="color:white; font-weight:bold;">Busca</span>:
-              <g:textField accesskey="f" id="q" name="q" value="${params.q}" class="small" accesskey="4" size="20"/>
+              <input accesskey="f" id="q" name="q" value="${params.q}" class="small" accesskey="4" size="20"/>
               <input type="submit" value="Search" />
             </g:form>
           </div>
@@ -46,10 +47,9 @@
               <li><a href="${createLinkTo(dir:'questao')}" class= "questao" style="color:white;" id="linkQestao">Questão</a></li>
               <li><a href="${createLinkTo(dir:'resposta')}" class= "resposta" style="color:white;" id="linkResposta">Resposta</a></li>
               <li><a href="${createLinkTo(dir:'usuario')}" class= "usuario" style="color:white;" id="linkUsuario">Usuário</a></li>
-              <li><a href="${createLinkTo(dir:'apuracao')}" class= "apuracao" style="color:white;" id="resultado">Resultado</a></li>
-              <li><a href="${createLinkTo(dir:'apuracao/apurar')}" class= "apuracao" style="color:white;" id="apurar">Apurar</a></li>
-              <li><a href="${createLinkTo(dir:'configuracao')}" class= "configuracao" style="color:white;" id="configuracao">Configuração</a></li>
-
+              <li><a href="${createLinkTo(dir:'apuracao')}" class= "apuracao" style="color:white;" id="linkResultado">Resultado</a></li>
+              <li><a href="${createLinkTo(dir:'apuracao/apurar')}" class= "apuracao" style="color:white;" id="linkApurar">Apurar</a></li>
+              <li><a href="${createLinkTo(dir:'configuracao')}" class= "configuracao" style="color:white;" id="linkConfiguracao">Configuração</a></li>
             </ul>
             </div>
             <!--<table border="0">

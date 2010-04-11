@@ -32,10 +32,19 @@
                         
                             <tr class="prop">
                                 <td valign="top" class="name">
+                                  <label for="codigo"><g:message code="curso.codigo.label" default="Código" /></label>
+                                </td>
+                                <td valign="top" class="value ${hasErrors(bean: cursoInstance, field: 'codigo', 'errors')}">
+                                    <input name="codigo" value="${cursoInstance?.codigo}" />
+                                </td>
+                            </tr>
+
+                            <tr class="prop">
+                                <td valign="top" class="name">
                                   <label for="nome"><g:message code="curso.nome.label" default="Nome" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: cursoInstance, field: 'nome', 'errors')}">
-                                    <g:textField name="nome" value="${cursoInstance?.nome}" />
+                                    <input name="nome" value="${cursoInstance?.nome}" />
                                 </td>
                             </tr>
                         

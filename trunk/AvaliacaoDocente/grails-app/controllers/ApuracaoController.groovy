@@ -37,6 +37,7 @@ class ApuracaoController {
                     apurar.media = apuracao.media
                     apurar.nulas = apuracao.nulas
                     apurar.save()
+                    println "apuracao da disciplina atualizada!"
                 }
             }
         }
@@ -70,9 +71,48 @@ class ApuracaoController {
     }
 
     def show = {
-
-        println "Mostrar na pagina da action 'show' o resultado por disciplina com o grafico e tals"
         def apuracaoInstance = Apuracao.get(params.id)
+        ResultadoDetalhe rd = new ResultadoDetalhe()
+        List<Resposta> respostas = Resposta.findAllByDisciplina(apuracaoInstance.disciplina, [sort:"id",order:"asc"])
+        int i = 0
+        int k = (respostas.size()/14)
+        println "Quantidade de alunos votantes: " + k
+        //ResultadoDetalhe[] teste = new ResultadoDetalhe[k]
+        List<ResultadoDetalhe> rdList = new ArrayList<ResultadoDetalhe>()
+        Integer[] total = new Integer[14]
+        Double[] mediaQuestao = new Double[14]
+        for (int j=0; j < 14; j++) {
+            total[j] = 0
+            mediaQuestao[j] = 0.0D
+        }
+
+        respostas.each{
+            total[i] += it.conceito
+            rd.respostas[i] = it.conceito
+            i++
+            if (i == 14) {
+                i = 0
+                println "Respostas: " + rd.respostas
+                rdList.add(rd)
+                rd = new ResultadoDetalhe()
+                //println "Respostas: " + teste[k-1].respostas + " media: " + mediaQuestao + " total: " + total
+                //k--
+                println "ok, chegou nas 14"
+            }
+        }
+
+        for(int j=0;j<14;j++ ){
+            mediaQuestao[j] = (Double)(total[j]/apuracaoInstance.quantidade)
+        }
+        //        k = (respostas.size()/14)
+        //        for(int j=0;j<k;j++){
+        //            println "Respostas: " + teste[j].respostas
+        //        }
+        rdList.each{
+            println it.respostas
+        }
+        println "total: " + total + "\nmedia: " + mediaQuestao
+
         if (!apuracaoInstance) {
             flash.message = "${message(code: 'default.not.found.message', args: [message(code: 'apuracao.label', default: 'Apuracao'), params.id])}"
             redirect(action: "list")
@@ -139,3 +179,8 @@ class ApuracaoController {
         }
     }
 }
+
+class ResultadoDetalhe {
+    static Integer[] respostas = new Integer[14]
+}
+

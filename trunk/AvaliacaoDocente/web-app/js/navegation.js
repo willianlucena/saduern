@@ -2,7 +2,7 @@
 function select(controller, action){
     if(action=="contato")
         controller="";
-    var path = new Array("avaliacao","curso", "departamento", "disciplina", "mapeamento", "permissao", "questao", "resposta","usuario");
+    var path = new Array("avaliacao","curso", "departamento", "disciplina", "mapeamento", "permissao", "questao", "resposta","usuario","apuracao","apuracao","configuracao");
     switch(controller){
         case path[0]:
             avaliacao = document.getElementById("linkAvaliacao");
@@ -48,6 +48,21 @@ function select(controller, action){
             usuario = document.getElementById("linkUsuario");
             usuario.className="usuario selected";
             usuario.style.color="#333";
+            break;
+        case path[9]:
+            apuracao = document.getElementById("linkResultado");
+            apuracao.className="apuracao selected";
+            apuracao.style.color="#333";
+            break;
+        case path[10]:
+            apuracao = document.getElementById("linkApurar");
+            apuracao.className="apuracao selected";
+            apuracao.style.color="#333";
+            break;
+        case path[11]:
+            configuracao = document.getElementById("linkConfiguracao");
+            configuracao.className="configuracao selected";
+            configuracao.style.color="#333";
             break;
         default:
             document.getElementById("main-menu").style.visibility="hidden";

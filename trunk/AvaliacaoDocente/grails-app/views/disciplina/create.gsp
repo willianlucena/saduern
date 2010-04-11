@@ -32,7 +32,7 @@
                                     <label for="nome"><g:message code="disciplina.nome.label" default="Nome" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'nome', 'errors')}">
-                                    <g:textField name="nome" value="${disciplinaInstance?.nome}" />
+                                    <input name="nome" value="${disciplinaInstance?.nome}" />
                                 </td>
                             </tr>
                         
@@ -41,7 +41,7 @@
                                     <label for="codigo"><g:message code="disciplina.codigo.label" default="Codigo" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'codigo', 'errors')}">
-                                    <g:textField name="codigo" value="${disciplinaInstance?.codigo}" />
+                                    <input name="codigo" value="${disciplinaInstance?.codigo}" />
                                 </td>
                             </tr>
                         
@@ -50,7 +50,7 @@
                                   <label for="semestre"><g:message code="disciplina.semestre.label" default="Semestre" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'semestre', 'errors')}">
-                                    <g:textField name="semestre" value="${disciplinaInstance?.semestre}" />
+                                    <input name="semestre" value="${disciplinaInstance?.semestre}" />
                                 </td>
                             </tr>
 
@@ -59,7 +59,7 @@
                                   <label for="situacao"><g:message code="disciplina.situacao.label" default="Situação" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: disciplinaInstance, field: 'situacao', 'errors')}">
-                                    <g:textField name="situacao" value="${disciplinaInstance?.situacao}" />
+                                    <input name="situacao" value="${disciplinaInstance?.situacao}" />
                                 </td>
                             </tr>
 

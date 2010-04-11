@@ -35,7 +35,7 @@
                                   <label for="conceito"><g:message code="resposta.conceito.label" default="Conceito" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'conceito', 'errors')}">
-                                    <g:textField name="conceito" value="${fieldValue(bean: respostaInstance, field: 'conceito')}" />
+                                    <input name="conceito" value="${fieldValue(bean: respostaInstance, field: 'conceito')}" />
                                 </td>
                             </tr>
                         
@@ -71,7 +71,7 @@
                                     <label for="semestreAvaliacao"><g:message code="resposta.disciplina.label" default="Semestre da Avaliação" /></label>
                                 </td>
                                 <td valign="top" class="value ${hasErrors(bean: respostaInstance, field: 'semestreAvaliacao', 'errors')}">
-                                    <g:textField name="semestreAvaliacao" value="${respostaInstance?.semestreAvaliacao}" />
+                                    <input name="semestreAvaliacao" value="${respostaInstance?.semestreAvaliacao}" />
                                 </td>
                             </tr>
                         

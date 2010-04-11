@@ -24,16 +24,17 @@
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="curso.id.label" default="Id" /></td>
-                            
                             <td valign="top" class="value">${fieldValue(bean: cursoInstance, field: "id")}</td>
-                            
+                        </tr>
+
+                        <tr class="prop">
+                            <td valign="top" class="name"><g:message code="curso.codigo.label" default="Código" /></td>
+                            <td valign="top" class="value">${fieldValue(bean: cursoInstance, field: "codigo")}</td>
                         </tr>
                     
                         <tr class="prop">
                             <td valign="top" class="name"><g:message code="curso.nome.label" default="Nome" /></td>
-                            
                             <td valign="top" class="value">${fieldValue(bean: cursoInstance, field: "nome")}</td>
-                            
                         </tr>
                      
                     </tbody>

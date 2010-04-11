@@ -35,7 +35,7 @@
                 <label for="semestreAvaliacao"><g:message code="configuracao.semestreAvaliacao.label" default="Semestre Avaliacao" /></label>
               </td>
               <td valign="top" class="value ${hasErrors(bean: configuracaoInstance, field: 'semestreAvaliacao', 'errors')}">
-          <g:textField name="semestreAvaliacao" value="${configuracaoInstance?.semestreAvaliacao}" />
+          <input name="semestreAvaliacao" value="${configuracaoInstance?.semestreAvaliacao}" />
           </td>
           </tr>
 
