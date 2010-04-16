@@ -76,12 +76,12 @@
 	font-family: Georgia, serif;
 }
 .input[type=checkbox]{
-	width: 35px;
-	margin: 0;
+	width: 20px;
+	margin-left:15;
 	display: inline-block;
 }
 .botao {
-        background: url(images/button-bg.png) repeat-x top center;
+       /* background: url(images/button-bg.png) repeat-x top center;*/
 	/*border: 1px solid #999;*/
 
 	padding: 5px;
@@ -124,7 +124,7 @@
 					<input type='password' style="width: 200px" class='input' name='j_password' id='j_password' />
 				</p><br/>
 				<p>
-					<label for='remember_me' style="color: black">Lembrar senha</label>
+					<label for='remember_me' style="color: black">Lembrar-me</label>
 					<input type='checkbox' class='input' name='_spring_security_remember_me' id='remember_me'
 					<g:if test='${hasCookie}'>checked='checked'</g:if> />
 				</p>

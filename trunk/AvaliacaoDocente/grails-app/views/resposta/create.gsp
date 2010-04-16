@@ -5,11 +5,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="layout" content="main" />
   <g:set var="entityName" value="${message(code: 'resposta.label', default: 'Resposta')}" />
+     <script type="text/javascript" src="http://jqueryui.com/latest/jquery-1.4.2.js"></script>
   <script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'jquery.validate.js')}" ></script>
   <script type="text/javascript" src="${createLinkTo(dir:'js/jquery',file:'additional-methods.js')}" ></script>
 
   <script type="text/javascript">
-    $(function($){
+    $(function(){
       $(".form").validate();
     });
   </script>
@@ -32,7 +33,6 @@
     </g:hasErrors>
     <g:form action="save" method="post" class="form">
       <div class="dialog">
-
 
         <table>
           <tbody>
@@ -91,7 +91,7 @@
                 <td class="value ${hasErrors(bean: respostaInstance, field: 'questao', 'errors')}">
 ${fieldValue(bean: questao, field: "id")}) ${fieldValue(bean: questao, field: "pergunta")}:<br/>
                 </td>
-                <td><input type="radio" name="pergunta${i+1}" value="1"/></td>
+                <td><input type="radio" name="pergunta${i+1}" value="1" class="required"/></td>
                 <td><input type="radio" name="pergunta${i+1}" value="2"/></td>
                 <td><input type="radio" name="pergunta${i+1}" value="3"/></td>
                 <td><input type="radio" name="pergunta${i+1}" value="4"/></td>
